@@ -502,7 +502,7 @@
 								{
 									if ( valor != '')
 									{
-										code_html = '<img src="' + CI.base_url + '/uploads/' + valor + '" class="img-thumbnail" />';
+										code_html = '<img src="' + CI.base_url + 'uploads/' + valor + '" class="img-thumbnail" />';
 										$('#bosquejo').html( code_html );
 									}
 								}

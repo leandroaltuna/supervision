@@ -28,11 +28,11 @@
 					<div class="box-header">
 						<i class="ion ion-clipboard"></i>
 						<h3 class="box-title">Lista de Formatos</h3>
-						<div class="box-tools pull-right">
-							<a href="<?php echo site_url('formatos/formato').'/'.$departament.'/'.$headquarters; ?>" class="btn btn-default pull-right">
+						<!-- <div class="box-tools pull-right">
+							<a href="<?php #echo site_url('formatos/formato').'/'.$departament.'/'.$headquarters; ?>" class="btn btn-default pull-right">
 								<i class="fa fa-plus"></i> Agregar Formato
 							</a>
-						</div>
+						</div> -->
 					</div><!-- /.box-header -->
 					<div class="box-body table-responsive">
 						<table id="example1" class="table table-bordered table-striped">

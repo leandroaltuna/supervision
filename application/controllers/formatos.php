@@ -6,6 +6,9 @@ class Formatos extends CI_Controller {
 	private $departamento = "Departamento";
 	private $sede = "Sede";
 
+	// private $locales = "Locales";
+	// private $master_table = "Formato_Visita";
+
 	private $master_table_fields;
 	private $fields_array;
 
@@ -131,6 +134,20 @@ class Formatos extends CI_Controller {
 
 		$this->load->library('upload',$config);
 
+		// $this->conditional = "id = '".$nro_aplicacion."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+		// $exist = $this->formatos_model->count_result( $this->conditional, $this->master_table ); // Consulto la cantidad de registros //
+
+		// $this->master_table_fields = $this->formatos_model->get_fields( $this->master_table ); // obtengo los campos de la tabla //
+		// $this->master_table_fields = $this->formatos_model->get_fields( $this->locales ); // obtengo los campos de la tabla //
+
+		// $this->fields_array = array( 'id', 'Imagen', 'username', 'fecha', 'estado' ); // array de campos que se excluiran del foreach de grabado //
+
+		// // data puntual //
+		// $this->master_data['id'] = $nro_aplicacion;
+		// $this->master_data['username'] = $this->user->username;
+		// $this->master_data['fecha'] = date('d/m/Y H:i:s');
+		// $this->master_data['estado'] = 1;
+		// //--
 
 		if ( trim($nro_aplicacion) == '' || is_null($nro_aplicacion) )
 		{
