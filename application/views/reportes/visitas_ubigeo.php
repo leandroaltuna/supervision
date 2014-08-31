@@ -48,6 +48,7 @@
 									<th>Servicios Higienicos</th>
 									<th>Estado de la Infraestructura</th>
 									<th>Especificaciones Técnicas (TDR MINEDU)</th>
+									<th>Fecha de Visita</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -90,7 +91,8 @@
 					{ mData: "Puertas" },
 					{ mData: "Servicios_Higienicos" },
 					{ mData: "Infraestructura" },
-					{ mData: "Especificaciones_Tecnicas" }
+					{ mData: "Especificaciones_Tecnicas" },
+					{ mData: "Fecha_Visita" }
 				],
 				sAjaxSource  : CI.site_url + '/reportes/view_visitas_sede',
 				"fnServerData": function ( sSource, aoData, fnCallback ) {

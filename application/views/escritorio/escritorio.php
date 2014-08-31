@@ -78,7 +78,6 @@
 							function (i, datos)
 							{
 								code_html = '<li>' +
-												// '<a href="' + CI.site_url + '/formatos/listar/' + datos.CCDD + '/' + datos.Cod_Sede + '">' + datos.Nombre_Sede + '</a>' +
 												'<a href="' + CI.site_url + '/escritorio/opciones/' + datos.CCDD + '/' + datos.Cod_Sede + '">' + datos.Nombre_Sede + '</a>' +
 											'</li>';
 

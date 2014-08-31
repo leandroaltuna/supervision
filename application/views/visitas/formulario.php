@@ -17,7 +17,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="<?php echo site_url('formatos/listar').'/'.$departament.'/'.$headquarters; ?>">
+				<a href="<?php echo site_url('visitas/listar').'/'.$departament.'/'.$headquarters; ?>">
 					<i class="fa fa-dashboard"></i> Lista
 				</a>
 			</li>
@@ -36,7 +36,7 @@
 					<!-- form start -->
 					<?php 
 						$attr = array('id' => 'formato');
-						echo form_open_multipart("formatos/save_formato", $attr);
+						echo form_open_multipart("visitas/save", $attr);
 					?>
 						<div class="box-body">
 							<div class="form-group">
@@ -79,7 +79,7 @@
 										<label for="Nombre">Nombre</label>	
 									</div>
 									<div class="col-lg-4">
-										<input type="text" class="form-control" id="Nombre" name="Nombre" maxlength="50">
+										<input type="text" class="form-control" id="Nombre" name="Nombre" maxlength="80">
 										<div class="help-block error"></div>
 									</div>
 									<div class="col-lg-2">
@@ -442,7 +442,7 @@
 						button_form.attr('disabled','disabled');
 						
 						$.ajax({
-							url: CI.site_url + '/formatos/save_formato',
+							url: CI.site_url + '/visitas/save',
 							type: 'POST',
 							data: new_form,
 							contentType: false,
@@ -468,7 +468,7 @@
 			}
 
 			$.ajax({
-				url: CI.site_url + '/formatos/view',
+				url: CI.site_url + '/visitas/view',
 				type: 'POST',
 				data: { id:codigo, CCDD:depa, Cod_Sede:sede },
 				cache: false,
@@ -486,6 +486,20 @@
 							function (fila, valor)
 							{
 								$('#' + fila).val( valor );
+							}
+						);
+
+					$.each( json_data.local,
+							function (fila, valor)
+							{
+								if ( fila == 'Id' )
+								{
+									$('#nro_aplicacion').val( valor );
+								}
+								else
+								{
+									$('#' + fila).val( valor );	
+								}
 							}
 						);
 

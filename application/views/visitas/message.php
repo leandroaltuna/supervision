@@ -12,7 +12,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="<?php echo site_url('formatos/listar').'/'.$departament.'/'.$headquarters; ?>">
+				<a href="<?php echo site_url('visitas/listar').'/'.$departament.'/'.$headquarters; ?>">
 					<i class="fa fa-dashboard"></i> Lista
 				</a>
 			</li>
@@ -43,7 +43,7 @@
 		$(document).ready(function() {
 			
 			setInterval(function() {
-				window.location.href = "<?php echo site_url('formatos/listar').'/'.$departament.'/'.$headquarters; ?>";
+				window.location.href = "<?php echo site_url('visitas/listar').'/'.$departament.'/'.$headquarters; ?>";
 			}, 1000);
 
 		})

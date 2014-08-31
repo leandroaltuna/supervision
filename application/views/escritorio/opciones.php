@@ -50,7 +50,7 @@
 					<div class="icon">
 						<i class="ion ion-document-text	"></i>
 					</div>
-					<a href="<?php echo site_url('formatos/listar').'/'.$departament.'/'.$headquarters; ?>" class="small-box-footer">
+					<a href="<?php echo site_url('visitas/listar').'/'.$departament.'/'.$headquarters; ?>" class="small-box-footer">
 						Ingresar <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				</div>

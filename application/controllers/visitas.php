@@ -1,16 +1,16 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Formatos extends CI_Controller {
+class Visitas extends CI_Controller {
 
-	private $master_table = "Formato";
+	private $master_table = "Formato_Visita";
 	private $departamento = "Departamento";
 	private $sede = "Sede";
-
-	// private $locales = "Locales";
-	// private $master_table = "Formato_Visita";
+	private $locales = "Locales";
 
 	private $master_table_fields;
-	private $fields_array;
+	private $master_table_excluded_fields;
+	private $locales_table_fields;
+	private $locales_table_excluded_fields;
 
 	private $errors = array();
 
@@ -36,7 +36,7 @@ class Formatos extends CI_Controller {
 		$this->parameters['title'] = "Formatos de Visita";
 		$this->parameters['description'] = "Formato de Visitas a Locales de Aplicacion";
 		$this->parameters['order'] = 1;
-		$this->parameters['main_content'] = "formatos/lista";
+		$this->parameters['main_content'] = "visitas/lista";
 		$this->parameters['user'] = $this->user;
 
 		$this->parameters['departament'] = $CCDD;
@@ -45,7 +45,7 @@ class Formatos extends CI_Controller {
 		$this->load->view('frontend/template', $this->parameters);
 	}
 
-	function view_all_format()
+	function view_all()
 	{
 		$CCDD = $this->input->get('dep');
 		$Cod_Sede = $this->input->get('sede');
@@ -58,19 +58,19 @@ class Formatos extends CI_Controller {
 
 	function get_data( $CCDD, $Cod_Sede )
 	{
-		$query = "SELECT id, CCDD, Cod_Sede, Nombre, Direccion FROM ".$this->master_table." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."' ORDER BY id ASC";
+		$query = "SELECT id, CCDD, Cod_Sede, Nombre, Direccion FROM ".$this->locales." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."' ORDER BY id ASC";
 		$this->data = $this->convert_utf8->convert_result( $this->formatos_model->only_query( $query ) );
 
 		return $this->data;
 	}
 
 	
-	function formato( $CCDD, $Cod_Sede, $Cod_Formato = null )
+	function formulario( $CCDD, $Cod_Sede, $Cod_Formato = null )
 	{
 		$this->parameters['title'] = "Formato de Visitas";
 		$this->parameters['description'] = "Formato de Visitas a Locales de Aplicacion";
 		$this->parameters['order'] = 1;
-		$this->parameters['main_content'] = "formatos/formato";
+		$this->parameters['main_content'] = "visitas/formulario";
 		$this->parameters['user'] = $this->user;
 
 		$this->parameters['departament'] = $CCDD;
@@ -93,8 +93,8 @@ class Formatos extends CI_Controller {
 		$this->parameters['headquarters'] = $this->get_headquarters( $CCDD, $Cod_Sede );
 
 		$this->conditional = "id = '".$Cod_Formato."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
+		$this->parameters['local'] = $this->convert_utf8->convert_row( $this->formatos_model->select_data( $this->locales, $this->conditional ) );
 		$this->parameters['contenido'] = $this->convert_utf8->convert_row( $this->formatos_model->select_data( $this->master_table, $this->conditional ) );
-
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);
@@ -119,13 +119,13 @@ class Formatos extends CI_Controller {
 	}
 
 
-	function save_formato()
+	function save()
 	{
 		$nro_aplicacion = $this->input->post('nro_aplicacion');
 		$CCDD = $this->input->post('CCDD');
 		$Cod_Sede = $this->input->post('Cod_Sede');
 
-
+		// configuracion de la libreria upload
 		$config['upload_path'] = './uploads/';
 		$config['allowed_types'] = 'png|jpg';
 		$config['max_size'] = '2048';
@@ -133,93 +133,81 @@ class Formatos extends CI_Controller {
 		$config['max_height'] = 0;
 
 		$this->load->library('upload',$config);
+		//--
 
-		// $this->conditional = "id = '".$nro_aplicacion."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
-		// $exist = $this->formatos_model->count_result( $this->conditional, $this->master_table ); // Consulto la cantidad de registros //
+		$this->conditional = "Id = '".$nro_aplicacion."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+		$exist = $this->formatos_model->count_result( $this->conditional, $this->master_table ); // Consulto la cantidad de registros //
 
-		// $this->master_table_fields = $this->formatos_model->get_fields( $this->master_table ); // obtengo los campos de la tabla //
-		// $this->master_table_fields = $this->formatos_model->get_fields( $this->locales ); // obtengo los campos de la tabla //
+		$this->master_table_fields = $this->formatos_model->get_fields( $this->master_table ); // obtengo los campos de la tabla //
+		$this->locales_table_fields = $this->formatos_model->get_fields( $this->locales ); // obtengo los campos de la tabla //
 
-		// $this->fields_array = array( 'id', 'Imagen', 'username', 'fecha', 'estado' ); // array de campos que se excluiran del foreach de grabado //
+		// array de campos que se excluiran del foreach de grabado //
+		$this->master_table_excluded_fields = array( 'Id', 'Imagen', 'username', 'fecha_visita', 'fecha_update', 'estado' ); 
+		$this->locales_table_excluded_fields = array( 'Id', 'CCDD', 'Cod_Sede' );
+		//--
 
-		// // data puntual //
-		// $this->master_data['id'] = $nro_aplicacion;
-		// $this->master_data['username'] = $this->user->username;
-		// $this->master_data['fecha'] = date('d/m/Y H:i:s');
-		// $this->master_data['estado'] = 1;
-		// //--
+		// data especifica formato_visita //
+		$this->master_data['Id'] = $nro_aplicacion;
+		$this->master_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+		$this->master_data['estado'] = 1;
+		//--
 
-		if ( trim($nro_aplicacion) == '' || is_null($nro_aplicacion) )
+
+		// data formato_visita
+		foreach ($this->master_table_fields as $key => $field_name)
 		{
-
-			$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
-			$nro_aplicacion = $this->formatos_model->count_result( $this->conditional, $this->master_table );
-			$nro_aplicacion = $nro_aplicacion + 1;
-
-
-			$this->master_table_fields = $this->formatos_model->get_fields( $this->master_table );
-			$this->fields_array = array( 'id', 'Imagen', 'username', 'fecha', 'estado' );
-
-			$this->master_data['id'] = $nro_aplicacion;
-			$this->master_data['username'] = $this->user->username;
-			$this->master_data['fecha'] = date('d/m/Y H:i:s');
-			$this->master_data['estado'] = 1;
-
-			if (!$this->upload->do_upload('Imagen'))
+			if ( !in_array( $field_name, $this->master_table_excluded_fields ) )
 			{
-				$this->errors = array('error' => $this->upload->display_errors());
-				$this->result = 0;
+				$this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
 			}
+		}
 
+		// data locales
+		foreach ($this->locales_table_fields as $key => $field_name)
+		{
+			if ( !in_array( $field_name, $this->locales_table_excluded_fields ) )
+			{
+				$this->locales_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
+			}
+		}
+
+		// subida de imagen
+		if (!$this->upload->do_upload('Imagen'))
+		{
+			$this->errors = array('error' => $this->upload->display_errors());
+			$this->result = 0;
+		}
+		//--
+
+		if ( $exist == 0)
+		{
 			if ( count($this->errors) == 0 )
 			{
-				
+				$this->master_data['fecha_visita'] = $fecha;
+
 				$imagen = $this->upload->data();
 				$this->master_data['Imagen'] = $imagen['file_name'];
 
-				foreach ($this->master_table_fields as $key => $field_name)
-				{
-					if ( !in_array( $field_name, $this->fields_array ) )
-					{
-						$this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
-					}
-				}
 				$this->result = $this->formatos_model->insert_data( $this->master_data, $this->master_table );
 			}
 		}
-		else
+		else if ( $exist > 0 )
 		{
+			$this->master_data['fecha_update'] = $fecha;
 
-			$this->conditional = "id = '".$nro_aplicacion."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
-
-			$this->master_table_fields = $this->formatos_model->get_fields( $this->master_table );
-			$this->fields_array = array( 'id', 'Imagen', 'username', 'fecha', 'estado' );
-
-			$this->master_data['id'] = $nro_aplicacion;
-			$this->master_data['username'] = $this->user->username;
-			$this->master_data['fecha'] = date('d/m/Y H:i:s');
-
-			if (!$this->upload->do_upload('Imagen'))
-			{
-				// nothing
-			}
-		
 			$imagen = $this->upload->data();
 			if ( $imagen['file_name'] != '' )
 			{
 				$this->master_data['Imagen'] = $imagen['file_name'];
 			}
 
-			foreach ($this->master_table_fields as $key => $field_name)
-			{
-				if ( !in_array( $field_name, $this->fields_array ) )
-				{
-					$this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
-				}
-			}
-
-			$this->result = $this->formatos_model-> update_data( $this->master_data, $this->master_table, $this->conditional );
+			$this->result = $this->formatos_model->update_data( $this->master_data, $this->master_table, $this->conditional );
 		}
+
+
+		$this->result = $this->formatos_model->update_data( $this->locales_data, $this->locales, $this->conditional );// actualiza nombre y direccion del local.
+
 
 		if ( $this->result > 0 )
 		{
@@ -235,7 +223,7 @@ class Formatos extends CI_Controller {
 		$this->parameters['title'] = "Formato de Visitas";
 		$this->parameters['description'] = "Formato de Visitas a Locales de Aplicacion";
 		$this->parameters['order'] = 1;
-		$this->parameters['main_content'] = "formatos/message";
+		$this->parameters['main_content'] = "visitas/message";
 		$this->parameters['user'] = $this->user;
 
 		$this->parameters['departament'] = $CCDD;

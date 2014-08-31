@@ -76,14 +76,14 @@
 				aoColumns: [
 					{ mData: "id",
 					  mRender: function (data, type, full) {
-							return '<a href="' + CI.site_url +'/formatos/formato/'+ full['CCDD'] + '/' + full['Cod_Sede'] + '/' + full['id'] + '">'+data[0]+'</a>';
+							return '<a href="' + CI.site_url +'/visitas/formulario/'+ full['CCDD'] + '/' + full['Cod_Sede'] + '/' + full['id'] + '">'+data[0]+'</a>';
 						},
 					  sWidth: "5%"
 					},
 					{ mData: "Nombre", sWidth: "45%" },
 					{ mData: "Direccion", sWidth: "50%" }
 				],
-				sAjaxSource  : CI.site_url + '/formatos/view_all_format',
+				sAjaxSource  : CI.site_url + '/visitas/view_all',
 				"fnServerData": function ( sSource, aoData, fnCallback ) {
 					/* Add some extra data to the sender */
 					aoData.push( { "name": "dep", "value": '<?php echo $departament; ?>' } );
