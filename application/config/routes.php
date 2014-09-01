@@ -42,6 +42,7 @@ $route['default_controller'] = "auth/auth";
 $route['escritorio/opciones/(:any)/(:any)'] = "escritorio/opciones/$1/$2";
 $route['visitas/listar/(:any)/(:any)'] = "visitas/index/$1/$2";
 $route['visitas/formulario/(:any)/(:any)/(:any)'] = "visitas/formulario/$1/$2/$3";
+$route['tareas/formulario/(:any)/(:any)'] = "verificacion_tareas/index/$1/$2";
 $route['404_override'] = '';
 
 

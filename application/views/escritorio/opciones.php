@@ -31,7 +31,7 @@
 					<div class="icon">
 						<i class="ion ion-clipboard"></i>
 					</div>
-					<a href="#" class="small-box-footer">
+					<a href="<?php echo site_url('tareas/formulario/').'/'.$departament.'/'.$headquarters; ?>" class="small-box-footer">
 						Ingresar <i class="fa fa-arrow-circle-right"></i>
 					</a>
 				</div>
