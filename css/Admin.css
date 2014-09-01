@@ -3542,3 +3542,19 @@ fieldset[disabled] .btn-vk.active {
   color: #587ea3;
   background-color: #ffffff;
 }
+
+
+
+
+
+@media (max-width: 767px) { 
+
+  .form-group {
+      margin-bottom: 15px !important;
+  }
+
+  .form-group input.form-control {
+      margin-bottom: 10px !important;
+  }  
+
+}

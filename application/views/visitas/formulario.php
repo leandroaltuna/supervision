@@ -289,9 +289,7 @@
 							</div>
 							<div class="form-group">
 								<div class="row">
-									<div id="bosquejo" name="bosquejo" class="col-lg-10">
-										<!-- ajax -->
-									</div>
+									<div id="bosquejo" name="bosquejo" class="col-lg-10"></div><!-- AJAX -->
 								</div>
 							</div>
 						</div><!-- /.box-body -->
@@ -460,12 +458,9 @@
 			depa = '<?php echo $departament ?>';
 			sede = '<?php echo $headquarters ?>';
 
-			if ( codigo == '' || codigo == '0' )
-			{
-				$.validator.addClassRules('Imagen', {
-					required: true
-				});
-			}
+			$.validator.addClassRules('Imagen', {
+				required: true
+			});
 
 			$.ajax({
 				url: CI.site_url + '/visitas/view',
@@ -518,6 +513,7 @@
 									{
 										code_html = '<img src="' + CI.base_url + 'uploads/' + valor + '" class="img-thumbnail" />';
 										$('#bosquejo').html( code_html );
+										$.validator.addClassRules('Imagen', {});
 									}
 								}
 							}
