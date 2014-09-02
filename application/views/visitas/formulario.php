@@ -30,15 +30,13 @@
 			<section class="col-lg-12">
 				<!-- general form elements -->
 				<div class="box box-primary">
-					<div class="box-header">
-						<h3 class="box-title">Formato de Visitas a Locales de Aplicacion</h3>
-					</div><!-- /.box-header -->
 					<!-- form start -->
 					<?php 
 						$attr = array('id' => 'formato');
 						echo form_open_multipart("visitas/save", $attr);
 					?>
 						<div class="box-body">
+							<h3 class="page-header">Formato de Visitas a Locales de Aplicacion</h3>
 							<div class="form-group">
 								<div class="row">
 									<div class="col-lg-2">
@@ -143,102 +141,133 @@
 							<h4 class="page-header"> III. Datos del Local de Aplicacion</h4>
 							<div class="form-group">
 								<div class="row">
-									<div class="col-lg-2">
-										<label for="Accesibilidad">Accesibilidad al Local de Aplicacion</label>
-										<span class="help-block">1.Facil.</span>
-										<span class="help-block">2.Dificultad en el acceso.</span>
-										<span class="help-block">3.Lejos de la ciudad</span>
+									<div class="col-sm-2">
+										<div class="form-group">
+											<label for="Accesibilidad">Accesibilidad al Local de Aplicacion</label>
+											<span class="help-block">1.Facil.</span>
+											<span class="help-block">2.Dificultad en el acceso.</span>
+											<span class="help-block">3.Lejos de la ciudad</span>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="Accesibilidad" name="Accesibilidad" maxlength="1">
+												<div class="help-block error"></div>
+											</div>
+										</div>
 									</div>
-									<div class="col-lg-3">
-										<label for="Disponibilidad">Aulas Disponibles (Incluye Aula de Contigencia)</label>
-										<span class="help-block">1.Mayor a la cantidad programada.</span>
-										<span class="help-block">2.Igual a la cantidad programada.</span>
-										<span class="help-block">3.Menor a la cantidad programada</span>
+									
+									<div class="col-sm-3">
+										<div class="form-group box-indicadores">
+											<label for="Disponibilidad">Aulas Disponibles (Incluye Aula de Contigencia)</label>
+											<span class="help-block">1.Mayor a la cantidad programada.</span>
+											<span class="help-block">2.Igual a la cantidad programada.</span>
+											<span class="help-block">3.Menor a la cantidad programada</span>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="Disponibilidad" name="Disponibilidad" maxlength="1">
+												<div class="help-block error"></div>
+											</div>
+											<div class="col-sm-5">
+												<input type="text" class="form-control" id="Cantidad_Disponible" name="Cantidad_Disponible" maxlength="3">
+												<div class="help-block error"></div>
+											</div>
+										</div>
 									</div>
-									<div class="col-lg-2">
-										<label for="Tamanio">Tamaño de las Aulas segun TDR</label>
-										<span class="help-block">1.Adecuadas segun TDR.</span>
-										<span class="help-block">2.No adecuadas segun TDR.</span>
+
+									<div class="col-sm-2">
+										<div class="form-group box-indicadores">
+											<label for="Tamanio">Tamaño de las Aulas segun TDR</label>
+											<span class="help-block">1.Adecuadas segun TDR.</span>
+											<span class="help-block">2.No adecuadas segun TDR.</span>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="Tamanio" name="Tamanio" maxlength="1">
+												<div class="help-block error"></div>
+											</div>
+										</div>
 									</div>
-									<div class="col-lg-2">
-										<label for="Mobiliario">Estado del Mobiliario (Carpetas)</label>
-										<span class="help-block">1.En buen estado.</span>
-										<span class="help-block">2.Carpetas en regular estado (algunas deterioradas).</span>
-										<span class="help-block">3.No recomendable para el proceso.</span>
+
+									<div class="col-sm-2">
+										<div class="form-group">
+											<label for="Mobiliario">Estado del Mobiliario (Carpetas)</label>
+											<span class="help-block">1.En buen estado.</span>
+											<span class="help-block">2.Carpetas en regular estado (algunas deterioradas).</span>
+											<span class="help-block">3.No recomendable para el proceso.</span>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="Mobiliario" name="Mobiliario" maxlength="1">
+												<div class="help-block error"></div>
+											</div>
+										</div>
 									</div>
-									<div class="col-lg-2">
-										<label for="Puertas">Puertas de Ingreso al Local de Aplicacion</label>
-										<span class="help-block">1.Tiene mas de 02 puertas de ingreso.</span>
-										<span class="help-block">2.Tiene 02 puertas de ingreso.</span>
-										<span class="help-block">3.Tiene solo 01 puerta de ingreso.</span>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-2">
-										<input type="text" class="form-control" id="Accesibilidad" name="Accesibilidad" maxlength="1">
-										<div class="help-block error"></div>
-									</div>
-									<div class="col-lg-2">
-										<input type="text" class="form-control" id="Disponibilidad" name="Disponibilidad" maxlength="1">
-										<div class="help-block error"></div>
-									</div>
-									<div class="col-lg-1">
-										<input type="text" class="form-control" id="Cantidad_Disponible" name="Cantidad_Disponible" maxlength="3">
-										<div class="help-block error"></div>
-									</div>
-									<div class="col-lg-2">
-										<input type="text" class="form-control" id="Tamanio" name="Tamanio" maxlength="1">
-										<div class="help-block error"></div>
-									</div>
-									<div class="col-lg-2">
-										<input type="text" class="form-control" id="Mobiliario" name="Mobiliario" maxlength="1">
-										<div class="help-block error"></div>
-									</div>
-									<div class="col-lg-2">
-										<input type="text" class="form-control" id="Puertas" name="Puertas" maxlength="1">
-										<div class="help-block error"></div>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-3">
-										<label for="Servicios_Higienicos">Servicios Higienicos</label>
-										<span class="help-block">1.Adecuados y limpios (damas y varones).</span>
-										<span class="help-block">2.No adecuados (baño en mal estado, falta limpieza).</span>
-									</div>
-									<div class="col-lg-3">
-										<label for="Infraestructura">Estado de la Infraestructura del Local</label>
-										<span class="help-block">1.En buen estado.</span>
-										<span class="help-block">2.Con deterioro en algunos ambientes.</span>
-										<span class="help-block">3.No recomendable.</span>
-									</div>
-									<div class="col-lg-3">
-										<label for="Especificaciones_Tecnicas">El Local de Aplicacion cumple con todas las Especificaciones Tecnicas (TDR MINEDU)</label>
-										<span class="help-block">1.SI.</span>
-										<span class="help-block">2.NO.</span>
-									</div>
-								</div>
-							</div>
-							<div class="form-group">
-								<div class="row">
-									<div class="col-lg-3">
-										<input type="text" class="form-control" id="Servicios_Higienicos" name="Servicios_Higienicos" maxlength="1">
-										<div class="help-block error"></div>
-									</div>
-									<div class="col-lg-3">
-										<input type="text" class="form-control" id="Infraestructura" name="Infraestructura" maxlength="1">
-										<div class="help-block error"></div>
-									</div>
-									<div class="col-lg-3">
-										<input type="text" class="form-control" id="Especificaciones_Tecnicas" name="Especificaciones_Tecnicas" maxlength="1">
-										<div class="help-block error"></div>
+
+									<div class="col-sm-2">
+										<div class="form-group">
+											<label for="Puertas">Puertas de Ingreso al Local de Aplicacion</label>
+											<span class="help-block">1.Tiene mas de 02 puertas de ingreso.</span>
+											<span class="help-block">2.Tiene 02 puertas de ingreso.</span>
+											<span class="help-block">3.Tiene solo 01 puerta de ingreso.</span>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="Puertas" name="Puertas" maxlength="1">
+												<div class="help-block error"></div>
+											</div>
+										</div>
 									</div>
 								</div>
 							</div>
 
+							<div class="form-group">
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="form-group box-indicadores">
+											<label for="Servicios_Higienicos">Servicios Higienicos</label>
+											<span class="help-block">1.Adecuados y limpios (damas y varones).</span>
+											<span class="help-block">2.No adecuados (baño en mal estado, falta limpieza).</span>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="Servicios_Higienicos" name="Servicios_Higienicos" maxlength="1">
+												<div class="help-block error"></div>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col-sm-3">
+										<div class="form-group box-indicadores">
+											<label for="Infraestructura">Estado de la Infraestructura del Local</label>
+											<span class="help-block">1.En buen estado.</span>
+											<span class="help-block">2.Con deterioro en algunos ambientes.</span>
+											<span class="help-block">3.No recomendable.</span>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="Infraestructura" name="Infraestructura" maxlength="1">
+												<div class="help-block error"></div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-3">
+										<div class="form-group box-indicadores">
+											<label for="Especificaciones_Tecnicas">El Local de Aplicacion cumple con todas las Especificaciones Tecnicas (TDR MINEDU)</label>
+											<span class="help-block">1.SI.</span>
+											<span class="help-block">2.NO.</span>
+										</div>
+										<div class="row">
+											<div class="col-sm-6">
+												<input type="text" class="form-control" id="Especificaciones_Tecnicas" name="Especificaciones_Tecnicas" maxlength="1">
+												<div class="help-block error"></div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
 
 							<h4 class="page-header"> IV. Ruta de Acceso</h4>
 							<div class="form-group">

@@ -1,7 +1,5 @@
-	<div class="box-header">
-		<h3 class="box-title">I. Actividades de presentación y coordinación</h3>
-	</div>
 	<div class="box-body">
+		<h3 class="page-header">I. Actividades de presentación y coordinación</h3>
 		<form role="form-horizontal">
 			<div class="row form-group">
 				<div class="col-sm-3">
@@ -69,11 +67,12 @@
 				</div>
 			</div>
 		</form>
-	</div>
-	<div class="box-header">
+	<!-- </div> -->
+	<!-- <div class="box-header">
 		<h3 class="box-title">II. Verificación del local de la Sede Operativa</h3>
 	</div>
-	<div class="box-body">
+	<div class="box-body"> -->
+		<h4 class="page-header">II. Verificación del local de la Sede Operativa</h4>
 		<form role="form">
 			<div class="row form-group">
 				<div class="col-sm-3">
