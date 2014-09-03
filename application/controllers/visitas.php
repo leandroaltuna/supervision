@@ -26,7 +26,7 @@ class Visitas extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->helper('url');
 
-		$this->load->model('formatos_model');
+		$this->load->model('visitas_model');
 
 		$this->user = $this->ion_auth->user()->row();
 	}
@@ -59,7 +59,7 @@ class Visitas extends CI_Controller {
 	function get_data( $CCDD, $Cod_Sede )
 	{
 		$query = "SELECT id, CCDD, Cod_Sede, Nombre, Direccion FROM ".$this->locales." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."' ORDER BY id ASC";
-		$this->data = $this->convert_utf8->convert_result( $this->formatos_model->only_query( $query ) );
+		$this->data = $this->convert_utf8->convert_result( $this->visitas_model->only_query( $query ) );
 
 		return $this->data;
 	}
@@ -93,8 +93,8 @@ class Visitas extends CI_Controller {
 		$this->parameters['headquarters'] = $this->get_headquarters( $CCDD, $Cod_Sede );
 
 		$this->conditional = "id = '".$Cod_Formato."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
-		$this->parameters['local'] = $this->convert_utf8->convert_row( $this->formatos_model->select_data( $this->locales, $this->conditional ) );
-		$this->parameters['contenido'] = $this->convert_utf8->convert_row( $this->formatos_model->select_data( $this->master_table, $this->conditional ) );
+		$this->parameters['local'] = $this->convert_utf8->convert_row( $this->visitas_model->select_data( $this->locales, $this->conditional ) );
+		$this->parameters['contenido'] = $this->convert_utf8->convert_row( $this->visitas_model->select_data( $this->master_table, $this->conditional ) );
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);
@@ -104,7 +104,7 @@ class Visitas extends CI_Controller {
 	{
 
 		$query = "SELECT CCDD, Departamento FROM ".$this->departamento." WHERE CCDD = '".$CCDD."'";
-		$departament_data = $this->formatos_model->only_query( $query );
+		$departament_data = $this->visitas_model->only_query( $query );
 
 		return $this->convert_utf8->convert_row( $departament_data );
 
@@ -113,7 +113,7 @@ class Visitas extends CI_Controller {
 	function get_headquarters( $CCDD, $Cod_Sede )
 	{
 		$query = "SELECT Cod_Sede, Nombre_Sede, CCDD FROM ".$this->sede." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
-		$sede_data = $this->formatos_model->only_query( $query );
+		$sede_data = $this->visitas_model->only_query( $query );
 
 		return $this->convert_utf8->convert_row( $sede_data );
 	}
@@ -136,10 +136,10 @@ class Visitas extends CI_Controller {
 		//--
 
 		$this->conditional = "Id = '".$nro_aplicacion."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
-		$exist = $this->formatos_model->count_result( $this->conditional, $this->master_table ); // Consulto la cantidad de registros //
+		$exist = $this->visitas_model->count_result( $this->conditional, $this->master_table ); // Consulto la cantidad de registros //
 
-		$this->master_table_fields = $this->formatos_model->get_fields( $this->master_table ); // obtengo los campos de la tabla //
-		$this->locales_table_fields = $this->formatos_model->get_fields( $this->locales ); // obtengo los campos de la tabla //
+		$this->master_table_fields = $this->visitas_model->get_fields( $this->master_table ); // obtengo los campos de la tabla //
+		$this->locales_table_fields = $this->visitas_model->get_fields( $this->locales ); // obtengo los campos de la tabla //
 
 		// array de campos que se excluiran del foreach de grabado //
 		$this->master_table_excluded_fields = array( 'Id', 'Imagen', 'username', 'fecha_visita', 'fecha_update', 'estado' ); 
@@ -189,7 +189,7 @@ class Visitas extends CI_Controller {
 				$imagen = $this->upload->data();
 				$this->master_data['Imagen'] = $imagen['file_name'];
 
-				$this->result = $this->formatos_model->insert_data( $this->master_data, $this->master_table );
+				$this->result = $this->visitas_model->insert_data( $this->master_data, $this->master_table );
 			}
 		}
 		else if ( $exist > 0 )
@@ -202,11 +202,11 @@ class Visitas extends CI_Controller {
 				$this->master_data['Imagen'] = $imagen['file_name'];
 			}
 
-			$this->result = $this->formatos_model->update_data( $this->master_data, $this->master_table, $this->conditional );
+			$this->result = $this->visitas_model->update_data( $this->master_data, $this->master_table, $this->conditional );
 		}
 
 
-		$this->result = $this->formatos_model->update_data( $this->locales_data, $this->locales, $this->conditional );// actualiza nombre y direccion del local.
+		$this->result = $this->visitas_model->update_data( $this->locales_data, $this->locales, $this->conditional );// actualiza nombre y direccion del local.
 
 
 		if ( $this->result > 0 )
