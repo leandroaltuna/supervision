@@ -78,7 +78,9 @@
 							function (i, datos)
 							{
 								code_html = '<li>' +
-												'<a href="' + CI.site_url + '/escritorio/opciones/' + datos.CCDD + '/' + datos.Cod_Sede + '">' + datos.Nombre_Sede + '</a>' +
+												'<div class="form-group">' +
+													'<a href="' + CI.site_url + '/escritorio/opciones/' + datos.CCDD + '/' + datos.Cod_Sede + '">' + datos.Nombre_Sede + '</a>' +
+												'</div>' +
 											'</li>';
 
 								$('#items_' + datos.CCDD ).append( code_html );

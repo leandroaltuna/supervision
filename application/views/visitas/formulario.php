@@ -94,7 +94,7 @@
 										<label for="Direccion">Direccion</label>	
 									</div>
 									<div class="col-lg-4">
-										<input type="text" class="form-control" id="Direccion" name="Direccion" maxlength="50">
+										<input type="text" class="form-control" id="Direccion" name="Direccion" maxlength="150">
 										<div class="help-block error"></div>
 									</div>
 									<div class="col-lg-2">
@@ -114,7 +114,7 @@
 										<label for="Nombres_Apellidos">Nombre y Apellidos</label>	
 									</div>
 									<div class="col-lg-4">
-										<input type="text" class="form-control" id="Nombres_Apellidos" name="Nombres_Apellidos" maxlength="50">
+										<input type="text" class="form-control" id="Nombres_Apellidos" name="Nombres_Apellidos" maxlength="100">
 										<div class="help-block error"></div>
 									</div>
 									<div class="col-lg-2">
@@ -132,7 +132,7 @@
 										<label for="Persona_Coordinar">Persona con quien coordino en ausencia del director</label>	
 									</div>
 									<div class="col-lg-4">
-										<input type="text" class="form-control" id="Persona_Coordinar" name="Persona_Coordinar" maxlength="50">
+										<input type="text" class="form-control" id="Persona_Coordinar" name="Persona_Coordinar" maxlength="100">
 										<div class="help-block error"></div>
 									</div>
 								</div>
@@ -157,7 +157,7 @@
 									</div>
 									
 									<div class="col-sm-3">
-										<div class="form-group box-indicadores">
+										<div class="form-group">
 											<label for="Disponibilidad">Aulas Disponibles (Incluye Aula de Contigencia)</label>
 											<span class="help-block">1.Mayor a la cantidad programada.</span>
 											<span class="help-block">2.Igual a la cantidad programada.</span>
@@ -176,7 +176,7 @@
 									</div>
 
 									<div class="col-sm-2">
-										<div class="form-group box-indicadores">
+										<div class="form-group">
 											<label for="Tamanio">Tamaño de las Aulas segun TDR</label>
 											<span class="help-block">1.Adecuadas segun TDR.</span>
 											<span class="help-block">2.No adecuadas segun TDR.</span>
@@ -224,7 +224,7 @@
 							<div class="form-group">
 								<div class="row">
 									<div class="col-sm-3">
-										<div class="form-group box-indicadores">
+										<div class="form-group">
 											<label for="Servicios_Higienicos">Servicios Higienicos</label>
 											<span class="help-block">1.Adecuados y limpios (damas y varones).</span>
 											<span class="help-block">2.No adecuados (baño en mal estado, falta limpieza).</span>
@@ -238,7 +238,7 @@
 									</div>
 									
 									<div class="col-sm-3">
-										<div class="form-group box-indicadores">
+										<div class="form-group">
 											<label for="Infraestructura">Estado de la Infraestructura del Local</label>
 											<span class="help-block">1.En buen estado.</span>
 											<span class="help-block">2.Con deterioro en algunos ambientes.</span>
@@ -253,7 +253,7 @@
 									</div>
 
 									<div class="col-sm-3">
-										<div class="form-group box-indicadores">
+										<div class="form-group">
 											<label for="Especificaciones_Tecnicas">El Local de Aplicacion cumple con todas las Especificaciones Tecnicas (TDR MINEDU)</label>
 											<span class="help-block">1.SI.</span>
 											<span class="help-block">2.NO.</span>
@@ -276,7 +276,7 @@
 										<label for="Referencia_Llegada">Referencia de llegada al Local de Aplicacion</label>	
 									</div>
 									<div class="col-lg-6">
-										<input type="text" class="form-control" id="Referencia_Llegada" name="Referencia_Llegada" maxlength="50">
+										<input type="text" class="form-control" id="Referencia_Llegada" name="Referencia_Llegada" maxlength="col-lg-100">
 										<div class="help-block error"></div>
 									</div>
 								</div>
@@ -336,7 +336,7 @@
 	
 	<!-- page script -->
 	<script type="text/javascript">
-		$(document).ready(function () {
+		$(document).ready(function(event) {
 
 			load_page();
 

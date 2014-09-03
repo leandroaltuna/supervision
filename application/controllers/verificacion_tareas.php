@@ -64,6 +64,11 @@ class Verificacion_tareas extends CI_Controller {
 		return $this->data;
 	}
 
+	function save_sec_1()
+	{
+		
+	}
+
 	
 	// function formulario( $CCDD, $Cod_Sede, $Cod_Formato = null )
 	// {

@@ -1,6 +1,10 @@
 	<div class="box-body">
 		<h3 class="page-header">I. Actividades de presentación y coordinación</h3>
-		<form role="form-horizontal">
+	<?php
+		$attributes = array('id' => 'frm_sec_1', 'name' => 'frm_sec_1', 'role' => 'form-horizontal' );
+		echo form_open('verificacion_tareas', $attributes);
+	?>
+		<!-- <form id="frm_sec_1" role="form-horizontal"> -->
 			<div class="row form-group">
 				<div class="col-sm-3">
 					<label>1.1 Presentación con el Director Departamental.</label>
@@ -74,7 +78,11 @@
 		</form>
 	
 		<h4 class="page-header">II. Verificación del local de la Sede Operativa</h4>
-		<form role="form">
+	<?php
+		$attributes = array('id' => 'frm_sec_2', 'name' => 'frm_sec_2', 'role' => 'form-horizontal' );
+		echo form_open('verificacion_tareas', $attributes);
+	?>
+		<!-- <form role="form"> -->
 			<div class="row form-group">
 				<div class="col-sm-3">
 					<label>2.1 El local de la sede es de uso exclusivo?.</label>
@@ -286,7 +294,11 @@
 		</form>
 
 		<h4 class="page-header">III. Verificación del avance de la selección de personal</h4>
-		<form role="form">
+	<?php
+		$attributes = array('id' => 'frm_sec_3', 'name' => 'frm_sec_3', 'role' => 'form-horizontal' );
+		echo form_open('verificacion_tareas', $attributes);
+	?>
+		<!-- <form role="form"> -->
 			<div class="row form-group">
 				<div class="col-sm-2">
 					<label>Coordinador de Sede.</label>
@@ -519,3 +531,163 @@
 		</form>
 
 	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			// Form Seccion 1 //
+			$('#frm_sec_1').validate({
+					rules : 
+					{
+						// Nombre: 
+						// {
+						// 	required: true
+						// },
+						// Direccion: 
+						// {
+						// 	required: true
+						// },
+						// Telefono_Institucion: 
+						// {
+						// 	required: true,
+						// 	digits: true
+						// },
+						// Nombres_Apellidos: 
+						// {
+						// 	required: true
+						// },
+					},
+					messages : 
+					{
+
+					},
+					errorPlacement: function(error, element) {
+						$(element).next().after(error);
+					},
+					invalidHandler: function(form, validator) {
+						var errors = validator.numberOfInvalids();
+						if (errors) {
+							var message = errors == 1
+							? 'Por favor corrige estos errores:\n'
+							: 'Por favor corrige los ' + errors + ' errores.\n';
+							var errors = "";
+							if (validator.errorList.length > 0) {
+								for (x=0;x<validator.errorList.length;x++) {
+									errors += "\n\u25CF " + validator.errorList[x].message;
+								}
+							}
+							alert(message + errors);
+						}
+						validator.focusInvalid();
+					},
+					submitHandler: function(form)
+					{
+						form = $('#frm_sec_1');
+						var form_data = form.serialize();
+						var button_form = form.find(':submit');
+						button_form.attr('disabled','disabled');
+						
+						$.ajax({
+							url: CI.site_url + '/verificacion_tareas/save_sec_1',
+							type: 'POST',
+							data: form_data,
+						});
+					}
+				}
+			);
+
+
+			// Form Seccion 2 //
+			$('#frm_sec_2').validate({
+					rules : 
+					{
+						
+					},
+					messages : 
+					{
+
+					},
+					errorPlacement: function(error, element) {
+						$(element).next().after(error);
+					},
+					invalidHandler: function(form, validator) {
+						var errors = validator.numberOfInvalids();
+						if (errors) {
+							var message = errors == 1
+							? 'Por favor corrige estos errores:\n'
+							: 'Por favor corrige los ' + errors + ' errores.\n';
+							var errors = "";
+							if (validator.errorList.length > 0) {
+								for (x=0;x<validator.errorList.length;x++) {
+									errors += "\n\u25CF " + validator.errorList[x].message;
+								}
+							}
+							alert(message + errors);
+						}
+						validator.focusInvalid();
+					},
+					submitHandler: function(form)
+					{
+						form = $('#frm_sec_2');
+						var form_data = form.serialize();
+						var button_form = form.find(':submit');
+						button_form.attr('disabled','disabled');
+						
+						$.ajax({
+							url: CI.site_url + '/verificacion_tareas/save_sec_2',
+							type: 'POST',
+							data: form_data,
+						});
+					}
+				}
+			);
+
+
+			// Form Seccion 3 //
+			$('#frm_sec_3').validate({
+					rules : 
+					{
+						
+					},
+					messages : 
+					{
+
+					},
+					errorPlacement: function(error, element) {
+						$(element).next().after(error);
+					},
+					invalidHandler: function(form, validator) {
+						var errors = validator.numberOfInvalids();
+						if (errors) {
+							var message = errors == 1
+							? 'Por favor corrige estos errores:\n'
+							: 'Por favor corrige los ' + errors + ' errores.\n';
+							var errors = "";
+							if (validator.errorList.length > 0) {
+								for (x=0;x<validator.errorList.length;x++) {
+									errors += "\n\u25CF " + validator.errorList[x].message;
+								}
+							}
+							alert(message + errors);
+						}
+						validator.focusInvalid();
+					},
+					submitHandler: function(form)
+					{
+						form = $('#frm_sec_3');
+						var form_data = form.serialize();
+						var button_form = form.find(':submit');
+						button_form.attr('disabled','disabled');
+						
+						$.ajax({
+							url: CI.site_url + '/verificacion_tareas/save_sec_3',
+							type: 'POST',
+							data: form_data,
+						});
+					}
+				}
+			);
+
+
+		});
+	</script>

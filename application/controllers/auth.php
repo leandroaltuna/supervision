@@ -49,6 +49,7 @@ class Auth extends CI_Controller {
 
 			// $this->_render_page('auth/index', $this->data);
 			$this->data['user'] = $this->ion_auth->user()->row();
+			$this->data['order'] = 1;
 			$this->data['main_content'] = 'auth/index';
 			$this->load->view('frontend/template', $this->data);
 		}
@@ -166,6 +167,7 @@ class Auth extends CI_Controller {
 			// $this->_render_page('auth/change_password', $this->data);
 			$this->data['title'] = "Cambiar Contraseña";
 			$this->data['user'] = $user;
+			$this->data['order'] = 1;
 			$this->data['main_content'] = 'auth/change_password';
 			$this->load->view('frontend/template', $this->data);
 		}
@@ -372,6 +374,7 @@ class Auth extends CI_Controller {
 			$this->data['user'] = $this->ion_auth->user($id)->row();
 
 			// $this->_render_page('auth/deactivate_user', $this->data);
+			$this->data['order'] = 1;
 			$this->data['main_content'] = 'auth/deactivate_user';
 			$this->load->view('frontend/template', $this->data);
 		}
@@ -505,6 +508,7 @@ class Auth extends CI_Controller {
 
 			// $this->_render_page('auth/create_user', $this->data);
 			$this->data['user'] = $this->ion_auth->user()->row();
+			$this->data['order'] = 1;
 			$this->data['main_content'] = 'auth/create_user';
 			$this->load->view('frontend/template', $this->data);
 		}
@@ -635,6 +639,7 @@ class Auth extends CI_Controller {
 
 		// $this->_render_page('auth/edit_user', $this->data);
 		$this->data['user'] = $this->ion_auth->user()->row();
+		$this->data['order'] = 1;
 		$this->data['main_content'] = 'auth/edit_user';
 		$this->load->view('frontend/template', $this->data);
 	}
@@ -685,6 +690,7 @@ class Auth extends CI_Controller {
 
 			// $this->_render_page('auth/create_group', $this->data);
 			$this->data['user'] = $this->ion_auth->user()->row();
+			$this->data['order'] = 1;
 			$this->data['main_content'] = 'auth/create_group';
 			$this->load->view('frontend/template', $this->data);
 		}

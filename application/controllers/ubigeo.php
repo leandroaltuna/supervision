@@ -39,8 +39,10 @@ class Ubigeo extends CI_Controller {
 		$departament_data = $this->ubigeo_model->ubigeo_by_users( $this->table_departament, 'CCDD', $departament_array );
 		$headquarters_data = $this->ubigeo_model->ubigeo_by_users( $this->table_headquarters, 'CCDD', $departament_array );
 
-		$this->parameters['departament'] = $this->convert_utf8->convert_result( $departament_data );
-		$this->parameters['headquarters'] = $this->convert_utf8->convert_result( $headquarters_data );
+		// $this->parameters['departament'] = $this->convert_utf8->convert_result( $departament_data );
+		// $this->parameters['headquarters'] = $this->convert_utf8->convert_result( $headquarters_data );
+		$this->parameters['departament'] = $departament_data->result();
+		$this->parameters['headquarters'] = $headquarters_data->result();
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);
@@ -52,7 +54,8 @@ class Ubigeo extends CI_Controller {
 		$query = "SELECT CCDD, Departamento FROM ".$this->table_departament." ORDER BY CCDD asc";
 		$departament_data = $this->ubigeo_model->only_query( $query );
 
-		$this->parameters['departament'] = $this->convert_utf8->convert_result( $departament_data );
+		// $this->parameters['departament'] = $this->convert_utf8->convert_result( $departament_data );
+		$this->parameters['departament'] = $departament_data->result();
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);
@@ -65,7 +68,8 @@ class Ubigeo extends CI_Controller {
 		$query = "SELECT Cod_Sede, Nombre_Sede, CCDD FROM ".$this->table_headquarters." WHERE CCDD = '".$CCDD."' ORDER BY Nombre_Sede asc";
 		$headquarters_data = $this->ubigeo_model->only_query( $query );
 
-		$this->parameters['headquarters'] = $this->convert_utf8->convert_result( $headquarters_data );
+		// $this->parameters['headquarters'] = $this->convert_utf8->convert_result( $headquarters_data );
+		$this->parameters['headquarters'] = $headquarters_data->result();
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);

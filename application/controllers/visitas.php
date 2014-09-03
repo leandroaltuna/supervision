@@ -12,6 +12,7 @@ class Visitas extends CI_Controller {
 	private $locales_table_fields;
 	private $locales_table_excluded_fields;
 
+	private $result;
 	private $errors = array();
 
 	function __construct()
@@ -59,7 +60,8 @@ class Visitas extends CI_Controller {
 	function get_data( $CCDD, $Cod_Sede )
 	{
 		$query = "SELECT id, CCDD, Cod_Sede, Nombre, Direccion FROM ".$this->locales." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."' ORDER BY id ASC";
-		$this->data = $this->convert_utf8->convert_result( $this->visitas_model->only_query( $query ) );
+		// $this->data = $this->convert_utf8->convert_result( $this->visitas_model->only_query( $query ) );
+		$this->data = $this->visitas_model->only_query( $query )->result();
 
 		return $this->data;
 	}
@@ -93,8 +95,10 @@ class Visitas extends CI_Controller {
 		$this->parameters['headquarters'] = $this->get_headquarters( $CCDD, $Cod_Sede );
 
 		$this->conditional = "id = '".$Cod_Formato."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
-		$this->parameters['local'] = $this->convert_utf8->convert_row( $this->visitas_model->select_data( $this->locales, $this->conditional ) );
-		$this->parameters['contenido'] = $this->convert_utf8->convert_row( $this->visitas_model->select_data( $this->master_table, $this->conditional ) );
+		// $this->parameters['local'] = $this->convert_utf8->convert_row( $this->visitas_model->select_data( $this->locales, $this->conditional ) );
+		$this->parameters['local'] = $this->visitas_model->select_data( $this->locales, $this->conditional )->row();
+		// $this->parameters['contenido'] = $this->convert_utf8->convert_row( $this->visitas_model->select_data( $this->master_table, $this->conditional ) );
+		$this->parameters['contenido'] = $this->visitas_model->select_data( $this->master_table, $this->conditional )->row();
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);
@@ -104,18 +108,20 @@ class Visitas extends CI_Controller {
 	{
 
 		$query = "SELECT CCDD, Departamento FROM ".$this->departamento." WHERE CCDD = '".$CCDD."'";
-		$departament_data = $this->visitas_model->only_query( $query );
+		$departament_data = $this->visitas_model->only_query( $query )->row();
 
-		return $this->convert_utf8->convert_row( $departament_data );
+		// return $this->convert_utf8->convert_row( $departament_data );
+		return $departament_data;
 
 	}
 
 	function get_headquarters( $CCDD, $Cod_Sede )
 	{
 		$query = "SELECT Cod_Sede, Nombre_Sede, CCDD FROM ".$this->sede." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
-		$sede_data = $this->visitas_model->only_query( $query );
+		$sede_data = $this->visitas_model->only_query( $query )->row();
 
-		return $this->convert_utf8->convert_row( $sede_data );
+		// return $this->convert_utf8->convert_row( $sede_data );
+		return $sede_data;
 	}
 
 
@@ -149,7 +155,7 @@ class Visitas extends CI_Controller {
 		// data especifica formato_visita //
 		$this->master_data['Id'] = $nro_aplicacion;
 		$this->master_data['username'] = $this->user->username;
-		$fecha = date('d/m/Y H:i:s');
+		$fecha = date('Y/m/d H:i:s');
 		$this->master_data['estado'] = 1;
 		//--
 
@@ -159,7 +165,8 @@ class Visitas extends CI_Controller {
 		{
 			if ( !in_array( $field_name, $this->master_table_excluded_fields ) )
 			{
-				$this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
+				// $this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
+				$this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : $this->input->post($field_name);
 			}
 		}
 
@@ -168,7 +175,8 @@ class Visitas extends CI_Controller {
 		{
 			if ( !in_array( $field_name, $this->locales_table_excluded_fields ) )
 			{
-				$this->locales_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
+				// $this->locales_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
+				$this->locales_data[$field_name] = ($this->input->post($field_name) == '') ? null : $this->input->post($field_name);
 			}
 		}
 
@@ -206,8 +214,8 @@ class Visitas extends CI_Controller {
 		}
 
 
-		$this->result = $this->visitas_model->update_data( $this->locales_data, $this->locales, $this->conditional );// actualiza nombre y direccion del local.
-
+		$this->visitas_model->update_data( $this->locales_data, $this->locales, $this->conditional );// actualiza nombre y direccion del local.
+		
 
 		if ( $this->result > 0 )
 		{
