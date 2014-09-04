@@ -492,6 +492,8 @@
 
 		function load_page () 
 		{
+			$('.text_success').show();
+
 			codigo = '<?php echo $Cod_Formato ?>';
 			depa = '<?php echo $departament ?>';
 			sede = '<?php echo $headquarters ?>';
@@ -556,6 +558,8 @@
 								}
 							}
 						);
+
+					$('.text_success').hide();
 				}
 			});
 		}
