@@ -44,7 +44,7 @@
 			
 			setInterval(function() {
 				window.location.href = "<?php echo site_url('visitas/listar').'/'.$departament.'/'.$headquarters; ?>";
-			}, 1000);
+			}, 600);
 
 		})
 	</script>

@@ -228,19 +228,23 @@ class Visitas extends CI_Controller {
 			$this->class_alert = "alert-danger";
 		}
 
-		$this->parameters['title'] = "Formato de Visitas";
-		$this->parameters['description'] = "Formato de Visitas a Locales de Aplicacion";
-		$this->parameters['order'] = 1;
-		$this->parameters['main_content'] = "visitas/message";
-		$this->parameters['user'] = $this->user;
+		// $this->parameters['title'] = "Formato de Visitas";
+		// $this->parameters['description'] = "Formato de Visitas a Locales de Aplicacion";
+		// $this->parameters['order'] = 1;
+		// $this->parameters['main_content'] = "visitas/message";
+		// $this->parameters['user'] = $this->user;
 
 		$this->parameters['departament'] = $CCDD;
 		$this->parameters['headquarters'] = $Cod_Sede;
 
 		$this->parameters['msg'] = $this->message;
-		$this->parameters['class_alert'] = $this->class_alert;
+		// $this->parameters['class_alert'] = $this->class_alert;
 
-		$this->load->view('frontend/template', $this->parameters);
+		// $this->load->view('frontend/template', $this->parameters);
+
+
+		$data['datos'] = $this->parameters;
+		$this->load->view('frontend/json/json_view', $data);
 
 	}
 

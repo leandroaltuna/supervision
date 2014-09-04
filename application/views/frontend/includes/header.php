@@ -63,4 +63,12 @@
 	</script>
 
 	</head>
-	<body class="skin-blue">
+	<body style="overflow: hidden;" class="skin-blue">
+
+
+	
+	<div class="text_success">
+		<div class="text_message">
+			<img src="<?php echo base_url(); ?>img/ajax-loader.gif" /><span>UN MOMENTO POR FAVOR</span>
+		</div>
+	</div><!-- /succesLogin -->

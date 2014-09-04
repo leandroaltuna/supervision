@@ -462,18 +462,27 @@
 					},
 					submitHandler: function(form)
 					{
-						event.preventDefault();
+						// event.preventDefault();
+						$('.text_success').show();
+
 						var new_form = new FormData($('#formato')[0]);
 						
 						var button_form = $('#formato').find(':submit');
 						button_form.attr('disabled','disabled');
-						
+
 						$.ajax({
 							url: CI.site_url + '/visitas/save',
 							type: 'POST',
 							data: new_form,
 							contentType: false,
 							processData: false,
+							dataType: 'json',
+				            success: function(json) {
+				                $('.text_success').hide();
+				                alert(json.msg);
+				                window.location.replace( CI.site_url + '/visitas/listar/' + json.departament + '/' + json.headquarters);
+				            }
+
 						});
 					}
 				}
