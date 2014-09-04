@@ -80,13 +80,13 @@
 								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
 							</div>
 							<div class="tab-pane" id="tab_4">
-								<?php #$this->load->view('tareas/secciones/seccion_v_vi'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
 							</div>
 							<div class="tab-pane" id="tab_5">
-								<?php #$this->load->view('tareas/secciones/seccion_v_vi'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_xiii_'); ?>
 							</div>
 							<div class="tab-pane" id="tab_6">
-								<?php #$this->load->view('tareas/secciones/seccion_v_vi'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_xiv'); ?>
 							</div>
 							<!-- /.tab-pane -->
 						</div><!-- /.tab-content -->
