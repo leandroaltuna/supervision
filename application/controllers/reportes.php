@@ -46,6 +46,66 @@ class Reportes extends CI_Controller {
 		$this->load->view('frontend/json/json_view', $data);
 	}
 
+	function view_visitas_nacional()
+	{
+
+		$query = "SELECT dep.Departamento, count(lc.id) as Total_Locales, ".
+				"(select count(*) from Formato_Visita fv where fv.CCDD = dep.CCDD)  as Total_Visitados, ".
+				"fn_indicadores_porcentaje(0, 0, dep.CCDD) as Total_P_Visitados, ".
+				"fn_indicadores(1, 1, dep.CCDD) as  Accesibilidad_1,".
+				"fn_indicadores_porcentaje(1, 1, dep.CCDD) as Accesibilidad_P_1, ".
+				"fn_indicadores(1, 2, dep.CCDD)as  Accesibilidad_2,".
+				"fn_indicadores_porcentaje(1, 2, dep.CCDD) as Accesibilidad_P_2, ".
+				"fn_indicadores(1, 3, dep.CCDD) as  Accesibilidad_3,".
+				"fn_indicadores_porcentaje(1, 3, dep.CCDD) as Accesibilidad_P_3, ".
+				"fn_indicadores(2, 1, dep.CCDD) as  Disponibilidad_1,".
+				"fn_indicadores_porcentaje(2, 1, dep.CCDD) as Disponibilidad_P_1, ".
+				"fn_indicadores(2, 2, dep.CCDD) as  Disponibilidad_2,".
+				"fn_indicadores_porcentaje(2, 2, dep.CCDD) as Disponibilidad_P_2, ".
+				"fn_indicadores(2, 3, dep.CCDD) as  Disponibilidad_3,".
+				"fn_indicadores_porcentaje(2, 3, dep.CCDD) as Disponibilidad_P_3, ".
+				"fn_indicadores(3, 1, dep.CCDD) as  Tamanio_1, ".
+				"fn_indicadores_porcentaje(3, 1, dep.CCDD) as Tamanio_P_1, ".
+				"fn_indicadores(3, 2, dep.CCDD) as  Tamanio_2, ".
+				"fn_indicadores_porcentaje(3, 2, dep.CCDD) as Tamanio_P_2, ".
+				"fn_indicadores(4, 1, dep.CCDD) as  Mobiliario_1, ".
+				"fn_indicadores_porcentaje(4, 1, dep.CCDD) as Mobiliario_P_1, ".
+				"fn_indicadores(4, 2, dep.CCDD) as  Mobiliario_2, ".
+				"fn_indicadores_porcentaje(4, 2, dep.CCDD) as Mobiliario_P_2, ".
+				"fn_indicadores(4, 3, dep.CCDD) as  Mobiliario_3, ".
+				"fn_indicadores_porcentaje(4, 3, dep.CCDD) as Mobiliario_P_3, ".
+				"fn_indicadores(5, 1, dep.CCDD) as  Puertas_1, ".
+				"fn_indicadores_porcentaje(5, 1, dep.CCDD) as Puertas_P_1, ".
+				"fn_indicadores(5, 2, dep.CCDD) as  Puertas_2, ".
+				"fn_indicadores_porcentaje(5, 2, dep.CCDD) as Puertas_P_2, ".
+				"fn_indicadores(5, 3, dep.CCDD) as  Puertas_3, ".
+				"fn_indicadores_porcentaje(5, 3, dep.CCDD) as Puertas_P_3, ".
+				"fn_indicadores(6, 1, dep.CCDD) as  SSHH_1, ".
+				"fn_indicadores_porcentaje(6, 1, dep.CCDD) as SSHH_P_1, ".
+				"fn_indicadores(6, 2, dep.CCDD) as  SSHH_2, ".
+				"fn_indicadores_porcentaje(6, 2, dep.CCDD) as SSHH_P_2, ".
+				"fn_indicadores(7, 1, dep.CCDD) as  Infraestructura_1, ".
+				"fn_indicadores_porcentaje(7, 1, dep.CCDD) as Infraestructura_P_1, ".
+				"fn_indicadores(7, 2, dep.CCDD) as  Infraestructura_2, ".
+				"fn_indicadores_porcentaje(7, 2, dep.CCDD) as Infraestructura_P_2, ".
+				"fn_indicadores(7, 3, dep.CCDD) as  Infraestructura_3, ".
+				"fn_indicadores_porcentaje(7, 3, dep.CCDD) as Infraestructura_P_3, ".
+				"fn_indicadores(8, 1, dep.CCDD) as  Especificaciones_1, ".
+				"fn_indicadores_porcentaje(8, 1, dep.CCDD) as Especificaciones_P_1, ".
+				"fn_indicadores(8, 2, dep.CCDD) as  Especificaciones_2, ".
+				"fn_indicadores_porcentaje(8, 2, dep.CCDD) as Especificaciones_P_2 ".
+				"FROM Departamento dep ".
+				"INNER JOIN Locales lc ON dep.CCDD = lc.CCDD ".
+				"GROUP BY dep.CCDD;";
+		$nacional_data = $this->visitas_model->only_query( $query );
+
+		$this->parameters['aaData'] = $nacional_data->result();
+
+		$data['datos'] = $this->parameters;
+		$this->load->view('frontend/json/json_view', $data);
+	}
+
+
 }
 
 ?>

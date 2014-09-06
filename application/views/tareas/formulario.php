@@ -12,7 +12,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="<?php echo site_url('escritorio/opciones').'/'.$departament.'/'.$headquarters; ?>">
+				<a href="<?php echo site_url('escritorio/opciones').'/'.$departament->CCDD.'/'.$headquarters->Cod_Sede; ?>">
 					<i class="fa fa-dashboard"></i> Menu
 				</a>
 			</li>
@@ -31,13 +31,13 @@
 									<label for="Departamento">Departamento</label>	
 								</div>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="Departamento" name="Departamento" readonly="true" value="">
+									<input type="text" class="form-control" id="Departamento" name="Departamento" readonly="true" value="<?php echo $departament->Departamento; ?>">
 								</div>
 								<div class="col-sm-2">
 									<label for="user_fullname">Apellidos y Nombres del Supervisor Nacional</label>	
 								</div>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="user_fullname" name="user_fullname" readonly="true" value="">
+									<input type="text" class="form-control" id="user_fullname" name="user_fullname" readonly="true" value="<?php echo $user->last_name.', '.$user->first_name; ?>">
 								</div>
 							</div>
 						</div>
@@ -47,45 +47,80 @@
 									<label for="Nombre_Sede">Sede</label>
 								</div>
 								<div class="col-sm-3">
-									<input type="text" class="form-control" id="Nombre_Sede" name="Nombre_Sede" readonly="true" value="">
+									<input type="text" class="form-control" id="Nombre_Sede" name="Nombre_Sede" readonly="true" value="<?php echo $headquarters->Nombre_Sede; ?>">
 								</div>
-								<div class="col-sm-2">
+								<!-- <div class="col-sm-2">
 									<label for="fecha_verificacion">Fecha</label>
 								</div>
 								<div class="col-sm-1">
 									<input type="text" class="form-control" id="fecha_verificacion" name="fecha_verificacion" value="">
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
 					<!-- Custom Tabs -->
 					<div class="nav-tabs-custom">
 						<ul class="nav nav-tabs">
-							<li class="active"><a href="#tab_1" data-toggle="tab">Sección I - III</a></li>
-							<li><a href="#tab_2" data-toggle="tab">Sección IV</a></li>
-							<li><a href="#tab_3" data-toggle="tab">Sección V - IX</a></li>
-							<li><a href="#tab_4" data-toggle="tab">Sección X - XII</a></li>
-							<li><a href="#tab_5" data-toggle="tab">Sección XIII</a></li>
-							<li><a href="#tab_6" data-toggle="tab">Sección XIV</a></li>
+							<li class="active"><a href="#tab_1" data-toggle="tab">Sección I</a></li>
+							<li><a href="#tab_2" data-toggle="tab">Sección II</a></li>
+							<li><a href="#tab_3" data-toggle="tab">Sección III</a></li>
+							<li><a href="#tab_4" data-toggle="tab">Sección IV</a></li>
+							<li><a href="#tab_5" data-toggle="tab">Sección V</a></li>
+							<li><a href="#tab_6" data-toggle="tab">Sección VI</a></li>
+							<li><a href="#tab_7" data-toggle="tab">Sección VII</a></li>
+							<li><a href="#tab_8" data-toggle="tab">Sección VIII</a></li>
+							<li><a href="#tab_9" data-toggle="tab">Sección IX</a></li>
+							<li><a href="#tab_10" data-toggle="tab">Sección X</a></li>
+							<li><a href="#tab_11" data-toggle="tab">Sección XI</a></li>
+							<li><a href="#tab_12" data-toggle="tab">Sección XII</a></li>
+							<li><a href="#tab_13" data-toggle="tab">Sección XIII</a></li>
+							<li><a href="#tab_14" data-toggle="tab">Sección XIV</a></li>
 						</ul>
 						<div class="tab-content">
 							<!-- tab-pane -->
 							<div class="tab-pane active" id="tab_1">
-								<?php $this->load->view('tareas/secciones/seccion_i_iii'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_i'); ?>
 							</div>
 							<div class="tab-pane" id="tab_2">
-								<?php $this->load->view('tareas/secciones/seccion_iv'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_ii'); ?>
 							</div>
 							<div class="tab-pane" id="tab_3">
-								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_iii'); ?>
 							</div>
 							<div class="tab-pane" id="tab_4">
-								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_iv'); ?>
 							</div>
 							<div class="tab-pane" id="tab_5">
-								<?php $this->load->view('tareas/secciones/seccion_xiii_'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
 							</div>
 							<div class="tab-pane" id="tab_6">
+								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+							</div>
+							<div class="tab-pane" id="tab_6">
+								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+							</div>
+							<div class="tab-pane" id="tab_7">
+								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+							</div>
+							<div class="tab-pane" id="tab_8">
+								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+							</div>
+							<div class="tab-pane" id="tab_10">
+								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
+							</div>
+							<div class="tab-pane" id="tab_11">
+								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
+							</div>
+							<div class="tab-pane" id="tab_12">
+								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
+							</div>
+							<div class="tab-pane" id="tab_13">
+								<?php $this->load->view('tareas/secciones/seccion_xiii_'); ?>
+							</div>
+							<!-- <div class="tab-pane" id="tab_5">
+								<?php #$this->load->view('tareas/secciones/seccion_xiii_'); ?>
+							</div> -->
+							<div class="tab-pane" id="tab_14">
 								<?php $this->load->view('tareas/secciones/seccion_xiv'); ?>
 							</div>
 							<!-- /.tab-pane -->
@@ -95,3 +130,41 @@
 			</div><!-- /.col -->
 		</div><!-- /.row -->
 	</section>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			
+			view_verificacion_tareas();
+
+		});
+
+		function view_verificacion_tareas()
+		{
+			$.ajax({
+				url: CI.site_url + '/verificacion_tareas/view',
+				type: 'POST',
+				data: {depa: '<?php echo $departament->CCDD; ?>', sede: '<?php echo $headquarters->Cod_Sede; ?>'},
+				dataType: 'json',
+				success: function(json_data) 
+				{
+					$.each( json_data.ACTIVIDAD,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
+
+					$.each( json_data.AVANCE_PERSONAL,
+							function (fila, valor)
+							{
+								$('input[name=' + fila + ']').val( valor );
+							}
+						);
+
+					$('.calculo_uno').trigger('change');
+
+				}
+			});
+		}
+
+	</script>

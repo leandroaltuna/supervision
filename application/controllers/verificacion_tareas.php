@@ -2,17 +2,19 @@
 
 class Verificacion_tareas extends CI_Controller {
 
-	// private $master_table = "Formato_Visita";
-	// private $departamento = "Departamento";
-	// private $sede = "Sede";
+	private $departamento = "Departamento";
+	private $sede = "Sede";
 	private $locales = "Locales";
 
-	// private $master_table_fields;
-	// private $master_table_excluded_fields;
-	// private $locales_table_fields;
-	// private $locales_table_excluded_fields;
+	private $table;
+	private $table_fields;
+	private $table_data;
+	private $table_excluded_fields = array( 'CCDD', 'Cod_Sede', 'username', 'fecha_visita', 'fecha_update');
+	
+	private $conditional;
+	private $num_entries;
+	private $array_excluded;
 
-	// private $errors = array();
 
 	function __construct()
 	{
@@ -39,8 +41,8 @@ class Verificacion_tareas extends CI_Controller {
 		$this->parameters['main_content'] = "tareas/formulario";
 		$this->parameters['user'] = $this->user;
 
-		$this->parameters['departament'] = $CCDD;
-		$this->parameters['headquarters'] = $Cod_Sede;
+		$this->parameters['departament'] = $this->get_departament( $CCDD );
+		$this->parameters['headquarters'] = $this->get_headquarters( $CCDD, $Cod_Sede );
 
 		$this->load->view('frontend/template', $this->parameters);
 	}
@@ -64,28 +66,144 @@ class Verificacion_tareas extends CI_Controller {
 		return $this->data;
 	}
 
-	function save_sec_1()
+	function get_departament( $CCDD )
 	{
+
+		$query = "SELECT CCDD, Departamento FROM ".$this->departamento." WHERE CCDD = '".$CCDD."'";
+		$departament_data = $this->tareas_model->only_query( $query )->row();
+
+		// return $this->convert_utf8->convert_row( $departament_data );
+		return $departament_data;
+
+	}
+
+	function get_headquarters( $CCDD, $Cod_Sede )
+	{
+		$query = "SELECT Cod_Sede, Nombre_Sede, CCDD FROM ".$this->sede." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
+		$sede_data = $this->tareas_model->only_query( $query )->row();
+
+		// return $this->convert_utf8->convert_row( $sede_data );
+		return $sede_data;
+	}
+
+	function save_actividad()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+		$seccion = $this->input->post('seccion');
+
+		$this->table = 'ACTIVIDAD';
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
+
+		// array de campos que se excluiran del foreach de grabado //
+		if ( $seccion == 1)
+		{
+			$this->array_excluded = ['A2_2_1_SINO', 'A2_2_1_OBS', 'A2_2_2_TOTAL', 'A2_2_2_OBS', 'A2_2_3_TOTAL', 'A2_2_3_OBS', 'A2_2_4_SINO', 'A2_2_4_OBS', 'A2_2_5_SINO', 'A2_2_5_OBS', 'A2_2_6_SINO', 'A2_2_6_OBS', 'A2_2_7_SINO', 'A2_2_7_TOTAL', 'A2_2_7_OBS', 'A2_2_8_TOTAL', 'A2_2_8_OBS', 'A2_2_9_SINO', 'A2_2_9_OBS', 'A2_2_10_TOTAL', 'A2_2_10_OBS', 'A2_2_11_SINO', 'A2_2_11_TOTAL', 'A2_2_11_OBS', 'A2_2_12_SINO', 'A2_2_12_OBS', 'A2_2_13_SINO', 'A2_2_13_OBS', 'A2_2_14_SINO', 'A2_2_14_OBS', 'A2_2_15_SINO', 'A2_2_15_OBS' ];
+		}
+		else if ( $seccion == 2 )
+		{
+			$this->array_excluded = ['A1_1_1_SINO', 'A1_1_1__OBS', 'A1_1_2_SINO', 'A1_1_2_OBS', 'A1_1_3_SINO', 'A1_1_3_OBS', 'A1_1_4_SINO', 'A1_1_4_OBS', 'A1_1_5_SINO', 'A1_1_5_OBS' ];
+		}
+		
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
 		
 	}
 
-	
-	// function formulario( $CCDD, $Cod_Sede, $Cod_Formato = null )
-	// {
-	// 	$this->parameters['title'] = "Formato de Visitas";
-	// 	$this->parameters['description'] = "Formato de Visitas a Locales de Aplicacion";
-	// 	$this->parameters['order'] = 1;
-	// 	$this->parameters['main_content'] = "visitas/formulario";
-	// 	$this->parameters['user'] = $this->user;
+	function save_avance_personal()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
 
-	// 	$this->parameters['departament'] = $CCDD;
-	// 	$this->parameters['headquarters'] = $Cod_Sede;
+		$this->table = 'AVANCE_SEL_PERSONAL';
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
 
-	// 	$Cod_Formato = ( is_null($Cod_Formato) ) ? 0 : $Cod_Formato;
-	// 	$this->parameters['Cod_Formato'] = $Cod_Formato;
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
 
-	// 	$this->load->view('frontend/template', $this->parameters);
-	// }
+		// array de campos que se excluiran del foreach de grabado //
+		$this->array_excluded = [];
+		
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
+	}
+
+	function view()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+		
+		$this->parameters['ACTIVIDAD'] = $this->tareas_model->select_data( 'ACTIVIDAD', $this->conditional )->row();
+		$this->parameters['AVANCE_PERSONAL'] = $this->tareas_model->select_data( 'AVANCE_SEL_PERSONAL', $this->conditional )->row();
+
+		$data['datos'] = $this->parameters;
+		$this->load->view('frontend/json/json_view', $data);
+	}
+
+	function operation()
+	{
+
+		$this->table_fields = $this->tareas_model->get_fields( $this->table ); // obtengo los campos de la tabla //
+
+		// array de campos que se excluiran del foreach de grabado //
+		foreach ($this->array_excluded as $value)
+		{
+			array_push( $this->table_excluded_fields, $value );
+		}
+
+		// data asignacion //
+		foreach ($this->table_fields as $key => $field_name)
+		{
+			if ( !in_array( $field_name, $this->table_excluded_fields ) )
+			{
+				$this->table_data[$field_name] = ($this->input->post($field_name) == '') ? null : $this->input->post($field_name);
+			}
+		}
+
+		// save data //
+		if ( $this->num_entries == 0)
+		{
+			$affected_rows = $this->tareas_model->insert_data( $this->table_data, $this->table );
+		}
+		else if ( $this->num_entries > 0 )
+		{
+			$affected_rows = $this->tareas_model->update_data( $this->table_data, $this->table, $this->conditional );
+		}
+
+		// result operation //
+		if ( $affected_rows > 0 )
+		{
+			$message = "Se envio los datos satisfactoriamente!";
+			$estado = TRUE;
+		}
+		else
+		{
+			$message = "Se ha producido un error, verifique y vuelvalo a intentar.";
+			$estado = FALSE;
+		}
+
+
+		$this->parameters['msg'] = $message;
+		$this->parameters['estado'] = $estado;
+		$data['datos'] = $this->parameters;
+
+		$this->load->view('frontend/json/json_view', $data);
+	}
 
 
 	// function view()

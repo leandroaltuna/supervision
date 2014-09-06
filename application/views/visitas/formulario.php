@@ -477,11 +477,11 @@
 							contentType: false,
 							processData: false,
 							dataType: 'json',
-				            success: function(json) {
-				                $('.text_success').hide();
-				                alert(json.msg);
-				                window.location.replace( CI.site_url + '/visitas/listar/' + json.departament + '/' + json.headquarters);
-				            }
+							success: function(json) {
+								$('.text_success').hide();
+								alert(json.msg);
+								window.location.replace( CI.site_url + '/visitas/listar/' + json.departament + '/' + json.headquarters);
+							}
 
 						});
 					}

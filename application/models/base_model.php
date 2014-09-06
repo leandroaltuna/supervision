@@ -13,21 +13,41 @@
 		function insert_data( $data, $table )
 		{
 			$this->db->insert($table, $data);
-			return $this->db->affected_rows() > 0;
+			$error = $this->db->_error_message();
+
+			if ( empty($error) ) 
+			{
+				return 1;
+			}
+
+			return 0;
 		}
 
 		function update_data( $data, $table, $condition )
 		{
 			$this->db->where($condition);
 			$this->db->update($table, $data);
+			$error = $this->db->_error_message();
 			
-			return $this->db->affected_rows() > 0;
+			if ( empty($error) ) 
+			{
+				return 1;
+			}
+			
+			return 0;
 		}
 
 		function delete_data( $table, $condition )
 		{
 			$this->db->delete( $table, $condition );
-			return $this->db->affected_rows() > 0;
+			$error = $this->db->_error_message();
+			
+			if ( empty($error) ) 
+			{
+				return 1;
+			}
+			
+			return 0;
 		}
 
 		function count_result( $condition, $table )

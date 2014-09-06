@@ -68,19 +68,114 @@
 				</div><!-- /.box -->
 			</div>
 		</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box">
+					<div class="box-header">
+						<h3 class="box-title">Reporte Nacional</h3>
+					</div><!-- /.box-header -->
+					<div class="box-body table-responsive">
+						<table id="example2" name="example1" class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th rowspan="2">Departamento</th>
+									<th rowspan="2">Locales</th>
+									<th rowspan="2">Visitados</th>
+									<th rowspan="2">%</th>
+									<th colspan="6">Accesibilidad</th>
+									<th colspan="6">Disponibilidad</th>
+									<th colspan="4">Tamaño</th>
+									<th colspan="6">Mobiliario</th>
+									<th colspan="6">Puertas</th>
+									<th colspan="4">Servicios Higienicos</th>
+									<th colspan="6">Infraestructura</th>
+									<th colspan="4">Especificaciones Técnicas</th>
+								</tr>
+								<tr>
+									<th>1</th>
+									<th>% 1</th>
+									<th>2</th>
+									<th>% 2</th>
+									<th>3</th>
+									<th>% 3</th>
+									<th>1</th>
+									<th>% 1</th>
+									<th>2</th>
+									<th>% 2</th>
+									<th>3</th>
+									<th>% 3</th>
+									<th>1</th>
+									<th>% 1</th>
+									<th>2</th>
+									<th>% 2</th>
+									<th>1</th>
+									<th>% 1</th>
+									<th>2</th>
+									<th>% 2</th>
+									<th>3</th>
+									<th>% 3</th>
+									<th>1</th>
+									<th>% 1</th>
+									<th>2</th>
+									<th>% 2</th>
+									<th>3</th>
+									<th>% 3</th>
+									<th>1</th>
+									<th>% 1</th>
+									<th>2</th>
+									<th>% 2</th>
+									<th>1</th>
+									<th>% 1</th>
+									<th>2</th>
+									<th>% 2</th>
+									<th>3</th>
+									<th>% 3</th>
+									<th>1</th>
+									<th>% 1</th>
+									<th>2</th>
+									<th>% 2</th>
+								</tr>
+							</thead>
+							<tbody>
+							</tbody>
+						</table>
+					</div><!-- /.box-body -->
+				</div><!-- /.box -->
+			</div>
+		</div>
 	</section>
 	<!-- DATA TABES SCRIPT -->
 
 	<script src="<?php echo base_url('js/plugins/datatables/jquery.dataTables.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('js/plugins/datatables/dataTables.bootstrap.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('js/plugins/datatables/fnReloadAjax.js'); ?>" type="text/javascript"></script>
+	<!-- <script src="<?php #echo base_url('js/plugins/datatables/dataTables.fixedColumns.js'); ?>" type="text/javascript"></script> -->
 
 	<script type="text/javascript">
 		$(function() {
 
 			load_departament();
 
-			var table = $("#example1").dataTable({
+			$('#departamento').on(
+				{
+					change : function()
+					{
+						var codigo = $(this).val();
+						load_headquarters( codigo );
+					}
+				}
+			);
+
+			$('#sede').on(
+				{
+					change : function()
+					{
+						table_sede.fnReloadAjax();
+					}
+				}
+			);
+
+			var table_sede = $("#example1").dataTable({
 				sProcessing  : true,
 				aoColumns: [
 					{ mData: "Nombre" },
@@ -106,25 +201,71 @@
 				}
 			});
 
-			$('#departamento').on(
-				{
-					change : function()
-					{
-						var codigo = $(this).val();
-						load_headquarters( codigo );
-					}
-				}
-			);
+			var table_nacional = $("#example2").dataTable({
+				sProcessing  : true,
+				aoColumns: [
+					{ mData: "Departamento" },
+					{ mData: "Total_Locales" },
+					{ mData: "Total_Visitados" },
+					{ mData: "Total_P_Visitados" },
+					{ mData: "Accesibilidad_1" },
+					{ mData: "Accesibilidad_P_1" },
+					{ mData: "Accesibilidad_2" },
+					{ mData: "Accesibilidad_P_2" },
+					{ mData: "Accesibilidad_3" },
+					{ mData: "Accesibilidad_P_3" },
+					{ mData: "Disponibilidad_1" },
+					{ mData: "Disponibilidad_P_1" },
+					{ mData: "Disponibilidad_2" },
+					{ mData: "Disponibilidad_P_2" },
+					{ mData: "Disponibilidad_3" },
+					{ mData: "Disponibilidad_P_3" },
+					{ mData: "Tamanio_1" },
+					{ mData: "Tamanio_P_1" },
+					{ mData: "Tamanio_2" },
+					{ mData: "Tamanio_P_2" },
+					{ mData: "Mobiliario_1" },
+					{ mData: "Mobiliario_P_1" },
+					{ mData: "Mobiliario_2" },
+					{ mData: "Mobiliario_P_2" },
+					{ mData: "Mobiliario_3" },
+					{ mData: "Mobiliario_P_3" },
+					{ mData: "Puertas_1" },
+					{ mData: "Puertas_P_1" },
+					{ mData: "Puertas_2" },
+					{ mData: "Puertas_P_2" },
+					{ mData: "Puertas_3" },
+					{ mData: "Puertas_P_3" },
+					{ mData: "SSHH_1" },
+					{ mData: "SSHH_P_1" },
+					{ mData: "SSHH_2" },
+					{ mData: "SSHH_P_2" },
+					{ mData: "Infraestructura_1" },
+					{ mData: "Infraestructura_P_1" },
+					{ mData: "Infraestructura_2" },
+					{ mData: "Infraestructura_P_2" },
+					{ mData: "Infraestructura_3" },
+					{ mData: "Infraestructura_P_3" },
+					{ mData: "Especificaciones_1" },
+					{ mData: "Especificaciones_P_1" },
+					{ mData: "Especificaciones_2" },
+					{ mData: "Especificaciones_P_2" }
+				],
+				sAjaxSource  : CI.site_url + '/reportes/view_visitas_nacional',
+				"fnServerData": function ( sSource, aoData, fnCallback ) {
+					/* Add some extra data to the sender */
+					// aoData.push( { "name": "depa", "value": $('#departamento').val() } );
+					// aoData.push( { "name": "sede", "value": $('#sede').val() } );
+					$.getJSON( sSource, aoData, function(json) { 
+						/* Do whatever additional processing you want on the callback, then tell DataTables */
+						fnCallback(json);
+					});
+				},
+				iDisplayLength: 25,
+				sScrollX: "100%",
+			});
 
-			$('#sede').on(
-				{
-					change : function()
-					{
-						table.fnReloadAjax();
-					}
-				}
-			);
-
+			// new $.fn.dataTable.FixedColumns( table_nacional );
 		});
 
 		function load_departament()

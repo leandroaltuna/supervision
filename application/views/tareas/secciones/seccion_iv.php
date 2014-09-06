@@ -602,8 +602,8 @@
 
 		function load_page()
 		{
-			dep = '<?php echo $departament; ?>';
-			sede = '<?php echo $headquarters; ?>';
+			dep = '<?php echo $departament->CCDD; ?>';
+			sede = '<?php echo $headquarters->Cod_Sede; ?>';
 
 			$.ajax({
 				url: CI.site_url + '/verificacion_tareas/view_detalle',

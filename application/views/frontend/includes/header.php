@@ -63,7 +63,7 @@
 	</script>
 
 	</head>
-	<body class="skin-blue">
+	<body style="overflow: hidden;" class="skin-blue">
 
 	<div class="text_success">
 		<div class="text_message">

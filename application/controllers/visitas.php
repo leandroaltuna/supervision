@@ -40,8 +40,8 @@ class Visitas extends CI_Controller {
 		$this->parameters['main_content'] = "visitas/lista";
 		$this->parameters['user'] = $this->user;
 
-		$this->parameters['departament'] = $CCDD;
-		$this->parameters['headquarters'] = $Cod_Sede;
+		$this->parameters['departament'] = $this->get_departament( $CCDD );
+		$this->parameters['headquarters'] = $this->get_headquarters( $CCDD, $Cod_Sede);
 
 		$this->load->view('frontend/template', $this->parameters);
 	}
