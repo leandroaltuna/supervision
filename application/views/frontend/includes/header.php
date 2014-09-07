@@ -59,6 +59,15 @@
 			// max: jQuery.validator.format("Please enter a value less than or equal to {0}."),
 			// min: jQuery.validator.format("Please enter a value greater than or equal to {0}.")
 		});
+
+		$.validator.addMethod("peruDate",function(value, element) {
+			var regeX = /^\d\d?\/\d\d?\/\d\d\d\d$/;
+			flag = false;
+			if(value == '' || regeX.test(value.trim())){
+				flag = true;
+			}
+			return flag;
+		}, "Ingrese fecha: dd/mm/yyyy");
 		
 	</script>
 

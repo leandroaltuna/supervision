@@ -106,20 +106,17 @@
 								<?php $this->load->view('tareas/secciones/seccion_ix'); ?>
 							</div>
 							<div class="tab-pane" id="tab_10">
-								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_x'); ?>
 							</div>
 							<div class="tab-pane" id="tab_11">
-								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_xi'); ?>
 							</div>
 							<div class="tab-pane" id="tab_12">
-								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_xii'); ?>
 							</div>
 							<div class="tab-pane" id="tab_13">
-								<?php $this->load->view('tareas/secciones/seccion_xiii_'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_xiii'); ?>
 							</div>
-							<!-- <div class="tab-pane" id="tab_5">
-								<?php #$this->load->view('tareas/secciones/seccion_xiii_'); ?>
-							</div> -->
 							<div class="tab-pane" id="tab_14">
 								<?php $this->load->view('tareas/secciones/seccion_xiv'); ?>
 							</div>
@@ -134,12 +131,40 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			
+			load_cmb_locales();
 			view_verificacion_tareas();
 
 		});
 
+		function load_cmb_locales()
+		{
+			depa = '<?php echo $departament->CCDD; ?>';
+			sede = '<?php echo $headquarters->Cod_Sede; ?>';
+
+			$.ajax({
+				url: CI.site_url + '/verificacion_tareas/get_local',
+				type: 'POST',
+				data: { depa:depa, sede:sede },
+				cache: false,
+				dataType: 'json',
+				success:function(json_data)
+				{
+					var code_html = '<option value="0">Seleccione...</option>';
+					$.each( json_data.detalle,
+							function (i, datos)
+							{
+								code_html += '<option value="' + datos.Id + '">' + datos.Nombre + '</option>';
+							}
+						);
+					$('#locales_iv').html( code_html );
+					$('#locales_xiii').html( code_html );
+				}
+			});
+		}
+
 		function view_verificacion_tareas()
 		{
+			$('.text_success').show();
 			$.ajax({
 				url: CI.site_url + '/verificacion_tareas/view',
 				type: 'POST',
@@ -176,6 +201,36 @@
 								$('#' + fila).val( valor );
 							}
 						);
+
+					$.each( json_data.V_CURSO_CAPA,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
+
+					$.each( json_data.V_COORDINACIONES,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
+
+					$.each( json_data.V_PRUEBA_EQUIPOS,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
+
+					$.each( json_data.V_SIMULACRO,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
+
+					$('.text_success').hide();
 				}
 			});
 		}

@@ -213,6 +213,101 @@ class Verificacion_tareas extends CI_Controller {
 		$this->operation();
 	}
 
+	function save_curso_capa()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+		$seccion = $this->input->post('seccion');
+
+		$this->table = 'V_CURSO_CAPA';
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
+
+		// array de campos que se excluiran del foreach de grabado //
+		if ( $seccion == 1 )
+		{
+			$this->array_excluded = ['CCDD', 'Cod_Sede', 'N3_9_1_SINO', 'N3_9_1_TOTAL', 'N3_9_1_T_APLI', 'N3_9_1_T_ORIE', 'N3_9_1_OBS', 'N3_9_2_SINO', 'N3_9_2_TOTAL', 'N3_9_2_T_APLI', 'N3_9_2_T_ORIE', 'N3_9_2_OBS', 'N3_9_3_SINO', 'N3_9_3_TOTAL', 'N3_9_3_T_APLI', 'N3_9_3_T_ORIE', 'N3_9_3_OBS', 'N3_9_4_SINO', 'N3_9_4_OBS', 'N3_9_5_SINO', 'N3_9_5_OBS', 'N3_9_6_SINO', 'N3_9_6_TOTAL', 'N3_9_6_OBS', 'N3_9_7_SINO', 'N3_9_7_OBS', 'N3_9_8_SINO', 'N3_9_8_OBS'];
+		}
+		else if ( $seccion == 2 )
+		{
+			$this->array_excluded = ['CCDD', 'Cod_Sede', 'N2_8_1_SINO', 'N2_8_1_TOTAL', 'N2_8_1_T_CORD', 'N2_8_1_T_ACL', 'N2_8_1_OBS', 'N2_8_2_SINO', 'N2_8_2_TOTAL', 'N2_8_2_T_CORD', 'N2_8_2_T_ACL', 'N2_8_2_OBS', 'N2_8_3_SINO', 'N2_8_3_TOTAL', 'N2_8_3_T_CORD', 'N2_8_3_T_ACL', 'N2_8_3_OBS', 'N2_8_4_SINO', 'N2_8_4_OBS', 'N2_8_5_SINO', 'N2_8_5_OBS', 'N2_8_6_SINO', 'N2_8_6_TOTAL', 'N2_8_6_OBS', 'N2_8_7_SINO', 'N2_8_7_OBS', 'N2_8_8_SINO', 'N2_8_8_OBS'];
+		}
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
+	}
+
+	function save_coordinadores()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+
+		$this->table = 'V_COORDINACIONES';
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
+
+		// array de campos que se excluiran del foreach de grabado //
+		$this->array_excluded = ['CCDD', 'Cod_Sede'];
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
+	}
+
+	function save_prueba_equipos()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+
+		$this->table = 'V_PRUEBA_EQUIPOS';
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
+
+		// array de campos que se excluiran del foreach de grabado //
+		$this->array_excluded = ['CCDD', 'Cod_Sede'];
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
+	}
+	function save_simulacro()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+
+		$this->table = 'V_SIMULACRO';
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
+
+		// array de campos que se excluiran del foreach de grabado //
+		$this->array_excluded = ['CCDD', 'Cod_Sede'];
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
+	}
+
 	function view()
 	{
 		$CCDD = $this->input->post('depa');
@@ -224,7 +319,10 @@ class Verificacion_tareas extends CI_Controller {
 		$this->parameters['AVANCE_PERSONAL'] = $this->tareas_model->select_data( 'AVANCE_SEL_PERSONAL', $this->conditional )->row();
 		$this->parameters['LOCALES_CAPACITACION_PRESELECCION'] = $this->tareas_model->select_data( 'LOCALES_CAPACITACION_PRESELECCION', $this->conditional )->row();
 		$this->parameters['V_EXAMEN_PRE'] = $this->tareas_model->select_data( 'V_EXAMEN_PRE', $this->conditional )->row();
-		
+		$this->parameters['V_CURSO_CAPA'] = $this->tareas_model->select_data( 'V_CURSO_CAPA', $this->conditional )->row();
+		$this->parameters['V_COORDINACIONES'] = $this->tareas_model->select_data( 'V_COORDINACIONES', $this->conditional )->row();
+		$this->parameters['V_PRUEBA_EQUIPOS'] = $this->tareas_model->select_data( 'V_PRUEBA_EQUIPOS', $this->conditional )->row();
+		$this->parameters['V_SIMULACRO'] = $this->tareas_model->select_data( 'V_SIMULACRO', $this->conditional )->row();
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);

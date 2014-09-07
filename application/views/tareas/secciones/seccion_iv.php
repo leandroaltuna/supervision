@@ -44,7 +44,7 @@
 		<div class="row">
 			<div class="form-group">
 				<div class="col-sm-2">
-					<label>LOCALES</label>
+					<label>Verificación de local de aplicación</label>
 				</div>
 				<div class="col-sm-5">
 					<select id="locales_iv" name="locales_iv" class="form-control">
@@ -316,7 +316,7 @@
 					<div class="form-group">
 						<div class="row">
 							<div class="pull-right">
-								<button class="btn btn-primary">Guardar</button>
+								<button class="btn btn-primary" disabled="true">Guardar</button>
 							</div>
 						</div>
 					</div>
@@ -328,14 +328,17 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-			
-			load_cmb_iv();
 
 			$('#locales_iv').on('change', function() {
 				
+				$('#frm_sec_4')[0].reset();
+
 				depa = '<?php echo $departament->CCDD; ?>';
 				sede = '<?php echo $headquarters->Cod_Sede; ?>';
 				codigo = $(this).val();
+
+				boton = $('#frm_sec_4').find(':submit');
+				boton.attr('disabled', 'disabled');
 
 				$.ajax({
 					url: CI.site_url + '/verificacion_tareas/view_detalle_iv',
@@ -351,6 +354,11 @@
 									$('#' + fila).val(valor);
 								}
 							);
+
+						if ( codigo != '0' ) 
+						{ 
+							boton.removeAttr('disabled'); 
+						}
 					}
 				});
 			});
@@ -498,29 +506,6 @@
 
 		});
 
-		function load_cmb_iv()
-		{
-			depa = '<?php echo $departament->CCDD; ?>';
-			sede = '<?php echo $headquarters->Cod_Sede; ?>';
 
-			$.ajax({
-				url: CI.site_url + '/verificacion_tareas/get_local',
-				type: 'POST',
-				data: { depa:depa, sede:sede },
-				cache: false,
-				dataType: 'json',
-				success:function(json_data)
-				{
-					var code_html = '<option value="0">Seleccione...</option>';
-					$.each( json_data.detalle,
-							function (i, datos)
-							{
-								code_html += '<option value="' + datos.Id + '">' + datos.Nombre + '</option>';
-							}
-						);
-					$('#locales_iv').html( code_html );
-				}
-			});
-		}
 
 	</script>
