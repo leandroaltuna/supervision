@@ -47,24 +47,18 @@ class Verificacion_tareas extends CI_Controller {
 		$this->load->view('frontend/template', $this->parameters);
 	}
 
-	function view_detalle()
+	function get_local()
 	{
-		$CCDD = $this->input->post('dep');
+		$CCDD = $this->input->post('depa');
 		$Cod_Sede = $this->input->post('sede');
 
-		$this->parameters['detalle'] = $this->get_data( $CCDD, $Cod_Sede );
+		$query = "SELECT Id, CCDD, Cod_Sede, Nombre, Direccion FROM ".$this->locales." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."' ORDER BY id ASC";
+		$this->parameters['detalle'] = $this->tareas_model->only_query( $query )->result();
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);
 	}
 
-	function get_data( $CCDD, $Cod_Sede )
-	{
-		$query = "SELECT id, CCDD, Cod_Sede, Nombre, Direccion FROM ".$this->locales." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."' ORDER BY id ASC";
-		$this->data = $this->convert_utf8->convert_result( $this->tareas_model->only_query( $query ) );
-
-		return $this->data;
-	}
 
 	function get_departament( $CCDD )
 	{
@@ -141,6 +135,84 @@ class Verificacion_tareas extends CI_Controller {
 		$this->operation();
 	}
 
+	function save_detalle_verificacion()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+		$codigo = $this->input->post('codigo');
+
+		$this->table = 'DETALLE_VERIFICACION';
+		$this->conditional = "Id_Local = '".$codigo."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
+
+		// array de campos que se excluiran del foreach de grabado //
+		$this->array_excluded = ['CCDD', 'Cod_Sede', 'Id_Local'];
+		
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		$this->table_data['Id_Local'] = $codigo;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
+	}
+
+	function save_seccion_5()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+
+		$this->table = 'LOCALES_CAPACITACION_PRESELECCION';
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
+
+		// array de campos que se excluiran del foreach de grabado //
+		$this->array_excluded = ['CCDD', 'Cod_Sede'];
+		
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
+	}
+
+	function save_examen_pre()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+		$seccion = $this->input->post('seccion');
+
+		$this->table = 'V_EXAMEN_PRE';
+		$this->conditional = "CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
+
+		$this->num_entries = $this->tareas_model->count_result( $this->conditional, $this->table ); // Consulto la cantidad de registros //
+
+		// array de campos que se excluiran del foreach de grabado //
+		if ( $seccion == 1 )
+		{
+			$this->array_excluded = ['CCDD', 'Cod_Sede', 'N3_7_1_TOTAL', 'N3_7_1_T_APLI', 'N3_7_1_T_ORIE', 'N3_7_1_T_OBS', 'N3_7_2_TOTAL', 'N3_7_2_T_APLI', 'N3_7_2_T_ORIE', 'N3_7_2_T_OBS', 'N3_7_3_SINO', 'N3_7_3_OBS', 'N3_7_4_SINO', 'N3_7_4_OBS', 'N3_7_5_SINO', 'N3_7_5_OBS'];
+		}
+		else if ( $seccion == 2 )
+		{
+			$this->array_excluded = ['CCDD', 'Cod_Sede', 'N2_6_1_TOTAL', 'N2_6_1_T_CORD', 'N2_6_1_T_ACL', 'N2_6_1_OBS', 'N2_6_2_TOTAL', 'N2_6_2_T_CORD', 'N2_6_2_T_ACL', 'N2_6_2_OBS', 'N2_6_3_SINO', 'N2_6_3_OBS', 'N2_6_4_SINO', 'N2_6_4_OBS', 'N2_6_5_SINO', 'N2_6_5_OBS'];
+		}
+		
+		// data especifica //
+		$this->table_data['CCDD'] = $CCDD;
+		$this->table_data['Cod_Sede'] = $Cod_Sede;
+		// $this->table_data['username'] = $this->user->username;
+		$fecha = date('d/m/Y H:i:s');
+
+		$this->operation();
+	}
+
 	function view()
 	{
 		$CCDD = $this->input->post('depa');
@@ -150,6 +222,24 @@ class Verificacion_tareas extends CI_Controller {
 		
 		$this->parameters['ACTIVIDAD'] = $this->tareas_model->select_data( 'ACTIVIDAD', $this->conditional )->row();
 		$this->parameters['AVANCE_PERSONAL'] = $this->tareas_model->select_data( 'AVANCE_SEL_PERSONAL', $this->conditional )->row();
+		$this->parameters['LOCALES_CAPACITACION_PRESELECCION'] = $this->tareas_model->select_data( 'LOCALES_CAPACITACION_PRESELECCION', $this->conditional )->row();
+		$this->parameters['V_EXAMEN_PRE'] = $this->tareas_model->select_data( 'V_EXAMEN_PRE', $this->conditional )->row();
+		
+
+		$data['datos'] = $this->parameters;
+		$this->load->view('frontend/json/json_view', $data);
+	}
+
+	function view_detalle_iv()
+	{
+		$CCDD = $this->input->post('depa');
+		$Cod_Sede = $this->input->post('sede');
+		$codigo = $this->input->post('codigo');
+
+		// consulta //
+		$query = "SELECT lc.Id, lc.CCDD, lc.Cod_Sede, lc.Nombre, lc.Direccion, dv.C_4_1_TOTAL, dv.C_4_1_OBS, dv.C_4_2_TOTAL, dv.C_4_2_OBS, dv.C_4_3_TOTAL, dv.C_4_3_OBS_V, dv.C_4_3_OBS_M, dv.C_4_4_TOTAL, dv.C_4_4_OBS_V, dv.C_4_4_OBS_M, dv.C_4_5_TOTAL, dv.C_4_5_OBS, dv.C_4_6_SINO, dv.C_4_6_OBS, dv.C_4_7_TOTAL, dv.C_4_7_OBS, dv.C_4_8_SINO, dv.C_4_8_OBS, dv.C_4_9_SINO, dv.C_4_9_OBS, dv.C_4_10_SINO, dv.C_4_10_OBS, dv.C_4_11_TOTAL, dv.C_4_11_OBS, dv.C_4_12_SINO, dv.C_4_12, dv.C_4_13_SINO, dv.C_4_13, dv.C_4_14_SINO, dv.C_4_14 FROM Locales lc LEFT JOIN DETALLE_VERIFICACION dv ON lc.Id = dv.Id_Local AND lc.CCDD = dv.CCDD AND lc.Cod_Sede = dv.Cod_Sede WHERE lc.Id = '".$codigo."' AND lc.CCDD = '".$CCDD."' AND lc.Cod_Sede = '".$Cod_Sede."';";
+		
+		$this->parameters['DetalleIV'] = $this->tareas_model->only_query( $query )->row();
 
 		$data['datos'] = $this->parameters;
 		$this->load->view('frontend/json/json_view', $data);
@@ -204,160 +294,6 @@ class Verificacion_tareas extends CI_Controller {
 
 		$this->load->view('frontend/json/json_view', $data);
 	}
-
-
-	// function view()
-	// {
-	// 	$Cod_Formato = $this->input->post('id');
-	// 	$CCDD = $this->input->post('CCDD');
-	// 	$Cod_Sede = $this->input->post('Cod_Sede');
-
-	// 	$this->parameters['departament'] = $this->get_departament( $CCDD );
-	// 	$this->parameters['headquarters'] = $this->get_headquarters( $CCDD, $Cod_Sede );
-
-	// 	$this->conditional = "id = '".$Cod_Formato."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
-	// 	$this->parameters['local'] = $this->convert_utf8->convert_row( $this->formatos_model->select_data( $this->locales, $this->conditional ) );
-	// 	$this->parameters['contenido'] = $this->convert_utf8->convert_row( $this->formatos_model->select_data( $this->master_table, $this->conditional ) );
-
-	// 	$data['datos'] = $this->parameters;
-	// 	$this->load->view('frontend/json/json_view', $data);
-	// }
-
-	// function get_departament( $CCDD )
-	// {
-
-	// 	$query = "SELECT CCDD, Departamento FROM ".$this->departamento." WHERE CCDD = '".$CCDD."'";
-	// 	$departament_data = $this->formatos_model->only_query( $query );
-
-	// 	return $this->convert_utf8->convert_row( $departament_data );
-
-	// }
-
-	// function get_headquarters( $CCDD, $Cod_Sede )
-	// {
-	// 	$query = "SELECT Cod_Sede, Nombre_Sede, CCDD FROM ".$this->sede." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'";
-	// 	$sede_data = $this->formatos_model->only_query( $query );
-
-	// 	return $this->convert_utf8->convert_row( $sede_data );
-	// }
-
-
-	// function save()
-	// {
-	// 	$nro_aplicacion = $this->input->post('nro_aplicacion');
-	// 	$CCDD = $this->input->post('CCDD');
-	// 	$Cod_Sede = $this->input->post('Cod_Sede');
-
-	// 	// configuracion de la libreria upload
-	// 	$config['upload_path'] = './uploads/';
-	// 	$config['allowed_types'] = 'png|jpg';
-	// 	$config['max_size'] = '2048';
-	// 	$config['max_width'] = 0;
-	// 	$config['max_height'] = 0;
-
-	// 	$this->load->library('upload',$config);
-	// 	//--
-
-	// 	$this->conditional = "Id = '".$nro_aplicacion."' AND CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."'"; // condicional //
-	// 	$exist = $this->formatos_model->count_result( $this->conditional, $this->master_table ); // Consulto la cantidad de registros //
-
-	// 	$this->master_table_fields = $this->formatos_model->get_fields( $this->master_table ); // obtengo los campos de la tabla //
-	// 	$this->locales_table_fields = $this->formatos_model->get_fields( $this->locales ); // obtengo los campos de la tabla //
-
-	// 	// array de campos que se excluiran del foreach de grabado //
-	// 	$this->master_table_excluded_fields = array( 'Id', 'Imagen', 'username', 'fecha_visita', 'fecha_update', 'estado' ); 
-	// 	$this->locales_table_excluded_fields = array( 'Id', 'CCDD', 'Cod_Sede' );
-	// 	//--
-
-	// 	// data especifica formato_visita //
-	// 	$this->master_data['Id'] = $nro_aplicacion;
-	// 	$this->master_data['username'] = $this->user->username;
-	// 	$fecha = date('d/m/Y H:i:s');
-	// 	$this->master_data['estado'] = 1;
-	// 	//--
-
-
-	// 	// data formato_visita
-	// 	foreach ($this->master_table_fields as $key => $field_name)
-	// 	{
-	// 		if ( !in_array( $field_name, $this->master_table_excluded_fields ) )
-	// 		{
-	// 			$this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
-	// 		}
-	// 	}
-
-	// 	// data locales
-	// 	foreach ($this->locales_table_fields as $key => $field_name)
-	// 	{
-	// 		if ( !in_array( $field_name, $this->locales_table_excluded_fields ) )
-	// 		{
-	// 			$this->locales_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
-	// 		}
-	// 	}
-
-	// 	// subida de imagen
-	// 	if (!$this->upload->do_upload('Imagen'))
-	// 	{
-	// 		$this->errors = array('error' => $this->upload->display_errors());
-	// 		$this->result = 0;
-	// 	}
-	// 	//--
-
-	// 	if ( $exist == 0)
-	// 	{
-	// 		if ( count($this->errors) == 0 )
-	// 		{
-	// 			$this->master_data['fecha_visita'] = $fecha;
-
-	// 			$imagen = $this->upload->data();
-	// 			$this->master_data['Imagen'] = $imagen['file_name'];
-
-	// 			$this->result = $this->formatos_model->insert_data( $this->master_data, $this->master_table );
-	// 		}
-	// 	}
-	// 	else if ( $exist > 0 )
-	// 	{
-	// 		$this->master_data['fecha_update'] = $fecha;
-
-	// 		$imagen = $this->upload->data();
-	// 		if ( $imagen['file_name'] != '' )
-	// 		{
-	// 			$this->master_data['Imagen'] = $imagen['file_name'];
-	// 		}
-
-	// 		$this->result = $this->formatos_model->update_data( $this->master_data, $this->master_table, $this->conditional );
-	// 	}
-
-
-	// 	$this->result = $this->formatos_model->update_data( $this->locales_data, $this->locales, $this->conditional );// actualiza nombre y direccion del local.
-
-
-	// 	if ( $this->result > 0 )
-	// 	{
-	// 		$this->message = "Se envio los datos satisfactoriamente!";
-	// 		$this->class_alert = "alert-success";
-	// 	}
-	// 	else
-	// 	{
-	// 		$this->message = "Se ha producido un error, verifique y vuelvalo a intentar.";
-	// 		$this->class_alert = "alert-danger";
-	// 	}
-
-	// 	$this->parameters['title'] = "Formato de Visitas";
-	// 	$this->parameters['description'] = "Formato de Visitas a Locales de Aplicacion";
-	// 	$this->parameters['order'] = 1;
-	// 	$this->parameters['main_content'] = "visitas/message";
-	// 	$this->parameters['user'] = $this->user;
-
-	// 	$this->parameters['departament'] = $CCDD;
-	// 	$this->parameters['headquarters'] = $Cod_Sede;
-
-	// 	$this->parameters['msg'] = $this->message;
-	// 	$this->parameters['class_alert'] = $this->class_alert;
-
-	// 	$this->load->view('frontend/template', $this->parameters);
-
-	// }
 
 }
 

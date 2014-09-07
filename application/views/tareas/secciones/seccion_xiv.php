@@ -568,7 +568,7 @@
 			sede = '<?php echo $headquarters->Cod_Sede; ?>';
 
 			$.ajax({
-				url: CI.site_url + '/verificacion_tareas/view_detalle',
+				url: CI.site_url + '/verificacion_tareas/get_local',
 				type: 'POST',
 				data: { dep:dep, sede:sede },
 				cache: false,

@@ -255,7 +255,11 @@
 				valor_uno = ( valor_uno.trim() != '' ) ? valor_uno : 0;
 				valor_dos = ( valor_dos.trim() != '' ) ? valor_dos : 0;
 
-				porcentaje = parseInt(valor_dos) * 100 / parseInt(valor_uno);
+				porcentaje = 0;
+				if ( valor_uno != 0 )
+				{
+					porcentaje = parseInt(valor_dos) * 100 / parseInt(valor_uno);
+				}
 
 				$('#preseleccionada_p_' + array[1]).val( porcentaje.toFixed(2) );
 
@@ -273,7 +277,11 @@
 				valor_uno = ( valor_uno.trim() != '' ) ? valor_uno : 0;
 				valor_dos = ( valor_dos.trim() != '' ) ? valor_dos : 0;
 
-				porcentaje = parseInt(valor_dos) * 100 / parseInt(valor_uno);
+				porcentaje = 0;
+				if ( valor_uno != 0 )
+				{
+					porcentaje = parseInt(valor_dos) * 100 / parseInt(valor_uno);
+				}
 
 				$('#capacitar_p_' + array[1]).val( porcentaje.toFixed(2) );
 
@@ -291,7 +299,11 @@
 				valor_uno = ( valor_uno.trim() != '' ) ? valor_uno : 0;
 				valor_dos = ( valor_dos.trim() != '' ) ? valor_dos : 0;
 
-				porcentaje = parseInt(valor_dos) * 100 / parseInt(valor_uno);
+				porcentaje = 0;
+				if ( valor_uno != 0 )
+				{
+					porcentaje = parseInt(valor_dos) * 100 / parseInt(valor_uno);
+				}
 
 				$('#seleccionada_p_' + array[1]).val( porcentaje.toFixed(2) );
 

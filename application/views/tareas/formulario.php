@@ -91,19 +91,19 @@
 								<?php $this->load->view('tareas/secciones/seccion_iv'); ?>
 							</div>
 							<div class="tab-pane" id="tab_5">
-								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_v'); ?>
 							</div>
 							<div class="tab-pane" id="tab_6">
-								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
-							</div>
-							<div class="tab-pane" id="tab_6">
-								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_vi'); ?>
 							</div>
 							<div class="tab-pane" id="tab_7">
-								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_vii'); ?>
 							</div>
 							<div class="tab-pane" id="tab_8">
-								<?php $this->load->view('tareas/secciones/seccion_v_ix'); ?>
+								<?php $this->load->view('tareas/secciones/seccion_viii'); ?>
+							</div>
+							<div class="tab-pane" id="tab_9">
+								<?php $this->load->view('tareas/secciones/seccion_ix'); ?>
 							</div>
 							<div class="tab-pane" id="tab_10">
 								<?php $this->load->view('tareas/secciones/seccion_x_xiii'); ?>
@@ -163,6 +163,19 @@
 
 					$('.calculo_uno').trigger('change');
 
+					$.each( json_data.LOCALES_CAPACITACION_PRESELECCION,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
+
+					$.each( json_data.V_EXAMEN_PRE,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
 				}
 			});
 		}
