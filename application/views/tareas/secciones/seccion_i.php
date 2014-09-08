@@ -10,11 +10,11 @@
 					<label>1.1 Presentación con el Director Departamental.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A1_1_1_SINO" name="A1_1_1_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A1_1_1_SINO" name="A1_1_1_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A1_1_1__OBS" name="A1_1_1__OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A1_1_1__OBS" name="A1_1_1__OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -23,11 +23,11 @@
 					<label>1.2 Presentación con el(la) Coordinador(a) de Sede.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A1_1_2_SINO" name="A1_1_2_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A1_1_2_SINO" name="A1_1_2_SINO" placeholder="Si(1) / No(2)" class="form-control"  maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A1_1_2_OBS" name="A1_1_2_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A1_1_2_OBS" name="A1_1_2_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -36,11 +36,11 @@
 					<label>1.3 Reunión de Coordinación con la RA de la sede departamental.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A1_1_3_SINO" name="A1_1_3_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A1_1_3_SINO" name="A1_1_3_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A1_1_3_OBS" name="A1_1_3_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A1_1_3_OBS" name="A1_1_3_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -49,11 +49,11 @@
 					<label>1.4 Estuvo completa la RA en la reunión de Coordinación?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A1_1_4_SINO" name="A1_1_4_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A1_1_4_SINO" name="A1_1_4_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A1_1_4_OBS" name="A1_1_4_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A1_1_4_OBS" name="A1_1_4_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -62,11 +62,11 @@
 					<label>1.5 Se detectó algún problema en la sede asignada?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A1_1_5_SINO" name="A1_1_5_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A1_1_5_SINO" name="A1_1_5_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A1_1_5_OBS" name="A1_1_5_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A1_1_5_OBS" name="A1_1_5_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 

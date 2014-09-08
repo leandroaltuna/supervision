@@ -10,11 +10,11 @@
 					<label>2.1 El local de la sede es de uso exclusivo?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_1_SINO" name="A2_2_1_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_1_SINO" name="A2_2_1_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_1_OBS" name="A2_2_1_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_1_OBS" name="A2_2_1_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -23,11 +23,11 @@
 					<label>2.2 Cuántos ambientes tiene el local de la sede?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_2_TOTAL" name="A2_2_2_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A2_2_2_TOTAL" name="A2_2_2_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_2_OBS" name="A2_2_2_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_2_OBS" name="A2_2_2_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -36,11 +36,11 @@
 					<label>2.3 Cuántos metros cuadrados tiene el local de la sede?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_3_TOTAL" name="A2_2_3_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A2_2_3_TOTAL" name="A2_2_3_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_3_OBS" name="A2_2_3_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_3_OBS" name="A2_2_3_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -49,11 +49,11 @@
 					<label>2.4 El espacio del local de la sede es adecuado según el número de personas a laborar?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_4_SINO" name="A2_2_4_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_4_SINO" name="A2_2_4_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_4_OBS" name="A2_2_4_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_4_OBS" name="A2_2_4_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -62,11 +62,11 @@
 					<label>2.5 El local de la sede cuenta con los servicios básicos (Luz, Agua y Desagüe)?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_5_SINO" name="A2_2_5_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_5_SINO" name="A2_2_5_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_5_OBS" name="A2_2_5_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_5_OBS" name="A2_2_5_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -75,11 +75,11 @@
 					<label>2.6 El local de la sede cuenta con mobiliario suficiente para el personal? (mes, sillas).</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_6_SINO" name="A2_2_6_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_6_SINO" name="A2_2_6_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_6_OBS" name="A2_2_6_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_6_OBS" name="A2_2_6_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -88,15 +88,15 @@
 					<label>2.7 La sede cuenta con PC de uso exclusivo destinadas para el proyecto? Cuántas?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_7_SINO" name="A2_2_7_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_7_SINO" name="A2_2_7_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_7_TOTAL" name="A2_2_7_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A2_2_7_TOTAL" name="A2_2_7_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="A2_2_7_OBS" name="A2_2_7_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_7_OBS" name="A2_2_7_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -105,11 +105,11 @@
 					<label>2.8 Cuántas PC están en buen estado?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_8_TOTAL" name="A2_2_8_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A2_2_8_TOTAL" name="A2_2_8_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_8_OBS" name="A2_2_8_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_8_OBS" name="A2_2_8_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -118,11 +118,11 @@
 					<label>2.9 La sede cuenta con señal de internet?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_9_SINO" name="A2_2_9_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_9_SINO" name="A2_2_9_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_9_OBS" name="A2_2_9_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_9_OBS" name="A2_2_9_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -131,11 +131,11 @@
 					<label>2.10 Cuál es el ancho de banda de la conexión de internet?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_10_TOTAL" name="A2_2_10_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A2_2_10_TOTAL" name="A2_2_10_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_10_OBS" name="A2_2_10_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_10_OBS" name="A2_2_10_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -144,15 +144,15 @@
 					<label>2.11 La sede cuenta con impresora multifuncional operativa? Cuántas?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_11_SINO" name="A2_2_11_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_11_SINO" name="A2_2_11_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_11_TOTAL" name="A2_2_11_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A2_2_11_TOTAL" name="A2_2_11_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="A2_2_11_OBS" name="A2_2_11_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_11_OBS" name="A2_2_11_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -161,11 +161,11 @@
 					<label>2.12 La impresora de la sede es de uso exclusivo del proyecto?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_12_SINO" name="A2_2_12_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_12_SINO" name="A2_2_12_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_12_OBS" name="A2_2_12_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_12_OBS" name="A2_2_12_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -174,11 +174,11 @@
 					<label>2.13 La sede cuenta con teléfono fijo o celular para el proyecto?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_13_SINO" name="A2_2_13_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_13_SINO" name="A2_2_13_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_13_OBS" name="A2_2_13_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_13_OBS" name="A2_2_13_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -187,11 +187,11 @@
 					<label>2.14 La sede esta implementada con los diagramas operativos? (Flujo de tareas, Nombre del Proyecto, Relación de la RA de la sede).</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_14_SINO" name="A2_2_14_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_14_SINO" name="A2_2_14_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_14_OBS" name="A2_2_14_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_14_OBS" name="A2_2_14_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -200,11 +200,11 @@
 					<label>2.15 La sede cuenta con los croquis del local de aplicación y ubicación del personal?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_15_SINO" name="A2_2_15_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A2_2_15_SINO" name="A2_2_15_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A2_2_15_OBS" name="A2_2_15_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A2_2_15_OBS" name="A2_2_15_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 

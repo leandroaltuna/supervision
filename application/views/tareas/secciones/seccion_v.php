@@ -9,7 +9,7 @@
 					<label>5.1 Cuántos locales cuenta para la preselección del curso de Nivel 2?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_1_TOTAL" name="A_5_1_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A_5_1_TOTAL" name="A_5_1_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
@@ -17,11 +17,11 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_1_T_AULAS" name="A_5_1_T_AULAS" placeholder="Total aulas" class="form-control">
+					<input type="text" id="A_5_1_T_AULAS" name="A_5_1_T_AULAS" placeholder="Total aulas" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="A_5_1_OBS" name="A_5_1_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A_5_1_OBS" name="A_5_1_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -30,15 +30,15 @@
 					<label>5.2 Las aulas a utilizar tienen las condiciones adecuadas y equipos (computadora y proyector)?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_2_SINO" name="A_5_2_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A_5_2_SINO" name="A_5_2_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_2_TOTAL" name="A_5_2_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A_5_2_TOTAL" name="A_5_2_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A_5_2_OBS" name="A_5_2_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A_5_2_OBS" name="A_5_2_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -47,7 +47,7 @@
 					<label>5.3 Cuántos locales cuenta para la capacitación nivel 2?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_3_TOTAL" name="A_5_3_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A_5_3_TOTAL" name="A_5_3_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
@@ -55,11 +55,11 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_3_T_AULAS" name="A_5_3_T_AULAS" placeholder="Total aulas" class="form-control">
+					<input type="text" id="A_5_3_T_AULAS" name="A_5_3_T_AULAS" placeholder="Total aulas" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="A_5_3_OBS" name="A_5_3_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A_5_3_OBS" name="A_5_3_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -68,15 +68,15 @@
 					<label>5.4 Las aulas a utilizar tienen las condiciones adecuadas y equipos (computadora y proyector)?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_4_SINO" name="A_5_4_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A_5_4_SINO" name="A_5_4_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_4_TOTAL" name="A_5_4_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A_5_4_TOTAL" name="A_5_4_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A_5_4_OBS" name="A_5_4_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A_5_4_OBS" name="A_5_4_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -85,7 +85,7 @@
 					<label>5.5 Cuántos locales cuenta para la preselección del curso nivel 3?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_5_TOTAL" name="A_5_5_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A_5_5_TOTAL" name="A_5_5_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
@@ -93,11 +93,11 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_5_T_AULAS" name="A_5_5_T_AULAS" placeholder="Total aulas" class="form-control">
+					<input type="text" id="A_5_5_T_AULAS" name="A_5_5_T_AULAS" placeholder="Total aulas" class="form-control" maxlength="2" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="A_5_5_OBS" name="A_5_5_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A_5_5_OBS" name="A_5_5_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -106,15 +106,15 @@
 					<label>5.6 Las aulas a utilizar tienen las condiciones adecuadas y equipos (computadora y proyector)?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_6_SINO" name="A_5_6_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A_5_6_SINO" name="A_5_6_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_6_TOTAL" name="A_5_6_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A_5_6_TOTAL" name="A_5_6_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A_5_6_OBS" name="A_5_6_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A_5_6_OBS" name="A_5_6_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -123,7 +123,7 @@
 					<label>5.7 Cuántos locales cuenta para la capacitación nivel 3?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_7_TOTAL" name="A_5_7_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A_5_7_TOTAL" name="A_5_7_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
@@ -131,11 +131,11 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_7_T_AULAS" name="A_5_7_T_AULAS" placeholder="Total aulas" class="form-control">
+					<input type="text" id="A_5_7_T_AULAS" name="A_5_7_T_AULAS" placeholder="Total aulas" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="A_5_7_OBS" name="A_5_7_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A_5_7_OBS" name="A_5_7_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -144,15 +144,15 @@
 					<label>5.8 Las aulas a utilizar tienen las condiciones adecuadas y equipos (computadora y proyector)?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_8_SINO" name="A_5_8_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="A_5_8_SINO" name="A_5_8_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A_5_8_TOTAL" name="A_5_8_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="A_5_8_TOTAL" name="A_5_8_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="A_5_8_OBS" name="A_5_8_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="A_5_8_OBS" name="A_5_8_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -177,16 +177,28 @@
 							required: true,
 							digits: true
 						},
+						A_5_1_T_AULAS:
+						{
+							digits: true
+						},
 						A_5_2_SINO:
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
 						},
+						A_5_2_TOTAL:
+						{
+							digits: true
+						},
 						A_5_3_TOTAL:
 						{
 							required: true,
 							digits: true	
+						},
+						A_5_3_T_AULAS:
+						{
+							digits: true
 						},
 						A_5_4_SINO:
 						{
@@ -194,10 +206,18 @@
 							digits: true,
 							range: [1,2]
 						},
+						A_5_4_TOTAL:
+						{
+							digits: true
+						},
 						A_5_5_TOTAL:
 						{
 							required: true,
 							digits: true	
+						},
+						A_5_5_T_AULAS:
+						{
+							digits: true
 						},
 						A_5_6_SINO:
 						{
@@ -205,17 +225,29 @@
 							digits: true,
 							range: [1,2]
 						},
+						A_5_6_TOTAL:
+						{
+							digits: true
+						},
 						A_5_7_TOTAL:
 						{
 							required: true,
 							digits: true	
+						},
+						A_5_7_T_AULAS:
+						{
+							digits: true
 						},
 						A_5_8_SINO:
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
-						}
+						},
+						A_5_8_TOTAL:
+						{
+							digits: true
+						},
 					},
 					messages : 
 					{

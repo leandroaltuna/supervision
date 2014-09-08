@@ -10,7 +10,7 @@
 					<label>Coordinador de Sede.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="Coor_Sede_PEA_Programada" name="Coor_Sede_PEA_Programada" placeholder="(2)" class="form-control">
+					<input type="text" id="Coor_Sede_PEA_Programada" name="Coor_Sede_PEA_Programada" placeholder="(2)" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -20,7 +20,7 @@
 					<label>Coordinador Lider del Local.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="Coor_LiderLocal_PEA_Programada" name="Coor_LiderLocal_PEA_Programada" placeholder="(2)" class="form-control">
+					<input type="text" id="Coor_LiderLocal_PEA_Programada" name="Coor_LiderLocal_PEA_Programada" placeholder="(2)" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -30,11 +30,11 @@
 					<label>Coordinador de Local.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="programada_1" name="Coor_Local_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres">
+					<input type="text" id="programada_1" name="Coor_Local_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="preseleccionada_1" name="Coor_Local_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno">
+					<input type="text" id="preseleccionada_1" name="Coor_Local_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -42,7 +42,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="capacitar_1" name="Coor_Local_PEA_aCapacitar" placeholder="(5)" class="form-control  calculo_dos">
+					<input type="text" id="capacitar_1" name="Coor_Local_PEA_aCapacitar" placeholder="(5)" class="form-control  calculo_dos" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -50,7 +50,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="seleccionada_1" name="Coor_Local_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres">
+					<input type="text" id="seleccionada_1" name="Coor_Local_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -64,11 +64,11 @@
 					<label>Asistente de Coordinador de Local.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="programada_2" name="Asist_CoordLocal_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres">
+					<input type="text" id="programada_2" name="Asist_CoordLocal_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="preseleccionada_2" name="Asist_CoordLocal_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno">
+					<input type="text" id="preseleccionada_2" name="Asist_CoordLocal_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -76,7 +76,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="capacitar_2" name="Asist_CoordLocal_PEA_aCapacitar" placeholder="(5)" class="form-control calculo_dos">
+					<input type="text" id="capacitar_2" name="Asist_CoordLocal_PEA_aCapacitar" placeholder="(5)" class="form-control calculo_dos" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -84,7 +84,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="seleccionada_2" name="Asist_CoordLocal_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres">
+					<input type="text" id="seleccionada_2" name="Asist_CoordLocal_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -98,11 +98,11 @@
 					<label>Aplicador.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="programada_3" name="Aplicador_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres">
+					<input type="text" id="programada_3" name="Aplicador_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="preseleccionada_3" name="Aplicador_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno">
+					<input type="text" id="preseleccionada_3" name="Aplicador_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -110,7 +110,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="capacitar_3" name="Aplicador_PEA_aCapacitar" placeholder="(5)" class="form-control calculo_dos">
+					<input type="text" id="capacitar_3" name="Aplicador_PEA_aCapacitar" placeholder="(5)" class="form-control calculo_dos" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -118,7 +118,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="seleccionada_3" name="Aplicador_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres">
+					<input type="text" id="seleccionada_3" name="Aplicador_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -132,11 +132,11 @@
 					<label>Orientador.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="programada_4" name="Orientador_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres">
+					<input type="text" id="programada_4" name="Orientador_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="preseleccionada_4" name="Orientador_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno">
+					<input type="text" id="preseleccionada_4" name="Orientador_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -144,7 +144,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="capacitar_4" name="Orientador_PEA_aCapacitar" placeholder="(5)" class="form-control  calculo_dos">
+					<input type="text" id="capacitar_4" name="Orientador_PEA_aCapacitar" placeholder="(5)" class="form-control  calculo_dos" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -152,7 +152,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="seleccionada_4" name="Orientador_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres">
+					<input type="text" id="seleccionada_4" name="Orientador_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -166,11 +166,11 @@
 					<label>Informatico de Local.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="programada_5" name="Informatico_Local_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres">
+					<input type="text" id="programada_5" name="Informatico_Local_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="preseleccionada_5" name="Informatico_Local_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno">
+					<input type="text" id="preseleccionada_5" name="Informatico_Local_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -178,7 +178,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="capacitar_5" name="Informatico_Local_PEA_aCapacitar" placeholder="(5)" class="form-control calculo_dos">
+					<input type="text" id="capacitar_5" name="Informatico_Local_PEA_aCapacitar" placeholder="(5)" class="form-control calculo_dos" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -186,7 +186,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="seleccionada_5" name="Informatico_Local_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres">
+					<input type="text" id="seleccionada_5" name="Informatico_Local_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -200,11 +200,11 @@
 					<label>Operador Informatico.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="programada_6" name="Operador_Informatico_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres">
+					<input type="text" id="programada_6" name="Operador_Informatico_PEA_Programada" placeholder="(2)" class="form-control calculo_uno calculo_dos calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="preseleccionada_6" name="Operador_Informatico_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno">
+					<input type="text" id="preseleccionada_6" name="Operador_Informatico_PEA_PreSeleccionada" placeholder="(3)" class="form-control calculo_uno" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -212,7 +212,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="capacitar_6" name="Operador_Informatico_PEA_aCapacitar" placeholder="(5)" class="form-control calculo_dos">
+					<input type="text" id="capacitar_6" name="Operador_Informatico_PEA_aCapacitar" placeholder="(5)" class="form-control calculo_dos" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
@@ -220,7 +220,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="seleccionada_6" name="Operador_Informatico_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres">
+					<input type="text" id="seleccionada_6" name="Operador_Informatico_PEA_Seleccionada" placeholder="(7)" class="form-control calculo_tres" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">

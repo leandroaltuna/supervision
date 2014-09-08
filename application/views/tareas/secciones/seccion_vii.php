@@ -10,19 +10,19 @@
 					<label>7.1 Cuántos postulantes preseleccionados tuvieron por cada cargo?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_7_1_TOTAL" name="N3_7_1_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="N3_7_1_TOTAL" name="N3_7_1_TOTAL" placeholder="Nro Total" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_7_1_T_APLI" name="N3_7_1_T_APLI" placeholder="Total de Aplicadores" class="form-control">
+					<input type="text" id="N3_7_1_T_APLI" name="N3_7_1_T_APLI" placeholder="Total de Aplicadores" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_7_1_T_ORIE" name="N3_7_1_T_ORIE" placeholder="Total de Orientadores" class="form-control">
+					<input type="text" id="N3_7_1_T_ORIE" name="N3_7_1_T_ORIE" placeholder="Total de Orientadores" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_7_1_T_OBS" name="N3_7_1_T_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_7_1_T_OBS" name="N3_7_1_T_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -31,19 +31,19 @@
 					<label>7.2 Cuántos postulantes por cargo cumplen con el perfil solicitado?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_7_2_TOTAL" name="N3_7_2_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="N3_7_2_TOTAL" name="N3_7_2_TOTAL" placeholder="Nro Total" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_7_2_T_APLI" name="N3_7_2_T_APLI" placeholder="Total de Aplicadores" class="form-control">
+					<input type="text" id="N3_7_2_T_APLI" name="N3_7_2_T_APLI" placeholder="Total de Aplicadores" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_7_2_T_ORIE" name="N3_7_2_T_ORIE" placeholder="Total de Orientadores" class="form-control">
+					<input type="text" id="N3_7_2_T_ORIE" name="N3_7_2_T_ORIE" placeholder="Total de Orientadores" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_7_2_T_OBS" name="N3_7_2_T_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_7_2_T_OBS" name="N3_7_2_T_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -52,11 +52,11 @@
 					<label>7.3 Se remitió a la sede central el formato con el personal preseleccionado?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_7_3_SINO" name="N3_7_3_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_7_3_SINO" name="N3_7_3_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_7_3_OBS" name="N3_7_3_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_7_3_OBS" name="N3_7_3_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -65,11 +65,11 @@
 					<label>7.4 La evaluación se realizó siguiendo los procedimientos establecidos por el MINEDU?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_7_4_SINO" name="N3_7_4_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_7_4_SINO" name="N3_7_4_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_7_4_OBS" name="N3_7_4_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_7_4_OBS" name="N3_7_4_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -78,11 +78,11 @@
 					<label>7.5 Se envió a la sede central el formato con la relación del personal seleccionado para el curso de capacitación nivel 3?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_7_5_SINO" name="N3_7_5_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_7_5_SINO" name="N3_7_5_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_7_5_OBS" name="N3_7_5_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_7_5_OBS" name="N3_7_5_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
