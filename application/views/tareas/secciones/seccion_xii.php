@@ -380,11 +380,13 @@
 						
 						form_data.push( 
 							{ name: 'depa', value: '<?php echo $departament->CCDD; ?>' },
-							{ name: 'sede', value: '<?php echo $headquarters->Cod_Sede; ?>' }
+							{ name: 'sede', value: '<?php echo $headquarters->Cod_Sede; ?>' },
+							{ name: 'seccion', value: 12 }
 						);
 						
 						$.ajax({
-							url: CI.site_url + '/verificacion_tareas/save_simulacro',
+							// url: CI.site_url + '/verificacion_tareas/save_simulacro',
+							url: CI.site_url + '/verificacion_tareas/save_episodios',
 							type: 'POST',
 							data: form_data,
 							dataType: 'json',

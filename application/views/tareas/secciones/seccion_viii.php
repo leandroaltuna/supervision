@@ -247,11 +247,12 @@
 						form_data.push( 
 							{ name: 'depa', value: '<?php echo $departament->CCDD; ?>' },
 							{ name: 'sede', value: '<?php echo $headquarters->Cod_Sede; ?>' },
-							{ name: 'seccion', value: 1 }
+							{ name: 'seccion', value: 8 }
 						);
 						
 						$.ajax({
-							url: CI.site_url + '/verificacion_tareas/save_curso_capa',
+							// url: CI.site_url + '/verificacion_tareas/save_curso_capa',
+							url: CI.site_url + '/verificacion_tareas/save_episodios',
 							type: 'POST',
 							data: form_data,
 							dataType: 'json',

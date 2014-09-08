@@ -158,6 +158,7 @@
 						);
 					$('#locales_iv').html( code_html );
 					$('#locales_xiii').html( code_html );
+					$('#locales_xiv').html( code_html );
 				}
 			});
 		}
@@ -187,6 +188,13 @@
 						);
 
 					$('.calculo_uno').trigger('change');
+
+					$.each( json_data.CAP_IV,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
 
 					$.each( json_data.LOCALES_CAPACITACION_PRESELECCION,
 							function (fila, valor)
@@ -224,6 +232,13 @@
 						);
 
 					$.each( json_data.V_SIMULACRO,
+							function (fila, valor)
+							{
+								$('#' + fila).val( valor );
+							}
+						);
+
+					$.each( json_data.CAP_XIII,
 							function (fila, valor)
 							{
 								$('#' + fila).val( valor );

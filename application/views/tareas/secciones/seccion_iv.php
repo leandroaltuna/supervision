@@ -1,6 +1,9 @@
 	<div class="box-body">
 		<h3 class="page-header">IV. Verificación de la Consecución de Locales de Aplicación</h3>
-		<form role="form-horizontal">
+	<?php
+		$attributes = array('id' => 'frm_sec_4_head', 'name' => 'frm_sec_4_head' );
+		echo form_open('', $attributes);
+	?>
 			<div class="row form-group">
 				<div class="col-sm-2">
 					<label>Sede</label>
@@ -12,7 +15,8 @@
 					<label>Total Aulas Requeridas</label>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" class="form-control">
+					<input type="text" id="Aulas_Requeridas" name="Aulas_Requeridas" class="form-control">
+					<div class="help-block error"></div>
 				</div>
 			</div>
 
@@ -21,14 +25,15 @@
 					<label>Total Locales Visitados</label>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" class="form-control">
+					<input type="text" id="Local_Visitados" name="Local_Visitados" class="form-control">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
 					<label>Total Locales cumplen condiciones según TDR</label>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" class="form-control">
+					<input type="text" id="Locales_Cumplen_Condiciones" name="Locales_Cumplen_Condiciones" class="form-control">
+					<div class="help-block error"></div>
 				</div>
 			</div>
 
@@ -363,6 +368,82 @@
 				});
 			});
 
+			// Form Seccion 4 head //
+			$('#frm_sec_4_head').validate({
+					rules : 
+					{
+						Aulas_Requeridas: 
+						{
+							required: true,
+							digits: true
+						},
+						Local_Visitados: 
+						{
+							required: true,
+							digits: true
+						},
+						Locales_Cumplen_Condiciones:
+						{
+							required: true,
+							digits: true	
+						}
+					},
+					messages : 
+					{
+
+					},
+					errorPlacement: function(error, element) {
+						$(element).next().after(error);
+					},
+					invalidHandler: function(form, validator) {
+						var errors = validator.numberOfInvalids();
+						if (errors) {
+							var message = errors == 1
+							? 'Por favor corrige estos errores:\n'
+							: 'Por favor corrige los ' + errors + ' errores.\n';
+							var errors = "";
+							if (validator.errorList.length > 0) {
+								for (x=0;x<validator.errorList.length;x++) {
+									errors += "\n\u25CF " + validator.errorList[x].message;
+								}
+							}
+							alert(message + errors);
+						}
+						validator.focusInvalid();
+					},
+					submitHandler: function(form)
+					{
+						form = $('#frm_sec_4_head');
+						var form_data = form.serializeArray();
+						var button_form = form.find(':submit');
+						button_form.attr('disabled','disabled');
+						
+						form_data.push( 
+							{ name: 'depa', value: '<?php echo $departament->CCDD; ?>' },
+							{ name: 'sede', value: '<?php echo $headquarters->Cod_Sede; ?>' },
+							{ name: 'seccion', value: 4 }
+						);
+						
+						$.ajax({
+							// url: CI.site_url + '/verificacion_tareas/save_head_verificacion',
+							url: CI.site_url + '/verificacion_tareas/save_episodios',
+							type: 'POST',
+							data: form_data,
+							dataType: 'json',
+							success: function(json) {
+								$('.text_success').hide();
+								alert(json.msg);
+								if (json.estado)
+								{
+									button_form.removeAttr('disabled');
+								}
+							}
+						});
+					}
+				}
+			);
+
+
 			// Form Seccion 4 //
 			$('#frm_sec_4').validate({
 					rules : 
@@ -482,11 +563,13 @@
 						form_data.push( 
 							{ name: 'depa', value: '<?php echo $departament->CCDD; ?>' },
 							{ name: 'sede', value: '<?php echo $headquarters->Cod_Sede; ?>' },
-							{ name: 'codigo', value: $('#locales_iv').val() }
+							{ name: 'codigo', value: $('#locales_iv').val() },
+							{ name: 'seccion', value: '4a' }
 						);
 						
 						$.ajax({
-							url: CI.site_url + '/verificacion_tareas/save_detalle_verificacion',
+							// url: CI.site_url + '/verificacion_tareas/save_detalle_verificacion',
+							url: CI.site_url + '/verificacion_tareas/save_episodios',
 							type: 'POST',
 							data: form_data,
 							dataType: 'json',
@@ -505,7 +588,5 @@
 
 
 		});
-
-
 
 	</script>

@@ -154,7 +154,8 @@
 						);
 						
 						$.ajax({
-							url: CI.site_url + '/verificacion_tareas/save_actividad',
+							// url: CI.site_url + '/verificacion_tareas/save_actividad',
+							url: CI.site_url + '/verificacion_tareas/save_episodios',
 							type: 'POST',
 							data: form_data,
 							dataType: 'json',

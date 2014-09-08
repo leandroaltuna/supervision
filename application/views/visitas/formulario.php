@@ -308,7 +308,7 @@
 								<div class="row">
 									<div class="col-lg-4">
 										<label for="Imagen">Bosquejo de llegada al Local de Aplicacion</label>
-										<span>( Maximo 2MB )</span>
+										<span>( Solo Imagenes - Maximo 2MB  )</span>
 									</div>
 									<div class="col-lg-2">
 										<input type="file" id="Imagen" name="Imagen" class="Imagen">
