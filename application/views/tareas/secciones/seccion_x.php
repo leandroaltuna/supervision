@@ -9,15 +9,15 @@
 					<label>10.1 ¿Se reunieron miembros del equipo de la RA con el comité de Vigilancia de la sede o representantes de la DRE psrs coordinar el proceso de la evaluación?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VC_10_1_SINO" name="VC_10_1_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VC_10_1_SINO" name="VC_10_1_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VC_10_1_CANT" name="VC_10_1_CANT" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VC_10_1_CANT" name="VC_10_1_CANT" placeholder="¿Cuántos?" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VC_10_1_OBS" name="VC_10_1_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VC_10_1_OBS" name="VC_10_1_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -27,11 +27,11 @@
 					<label>10.2 ¿Se coordinó con la Policía Nacional del Perú para el dia de la aplicación?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VC_10_2_SINO" name="VC_10_2_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VC_10_2_SINO" name="VC_10_2_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VC_10_2_FECHA" name="VC_10_2_FECHA" placeholder="fecha de presentación de oficio: dd/mm/yyyy" class="form-control">
+					<input type="text" id="VC_10_2_FECHA" name="VC_10_2_FECHA" placeholder="fecha de presentación de oficio: dd/mm/yyyy" class="form-control" maxlength="10">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -41,11 +41,11 @@
 					<label>10.3 ¿Se remitió oficio solicitando la presencia de la Fiscalí para el día de la aplicación?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VC_10_3_SINO" name="VC_10_3_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VC_10_3_SINO" name="VC_10_3_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VC_10_3_FECHA" name="VC_10_3_FECHA" placeholder="fecha de presentación de oficio: dd/mm/yyyy" class="form-control">
+					<input type="text" id="VC_10_3_FECHA" name="VC_10_3_FECHA" placeholder="fecha de presentación de oficio: dd/mm/yyyy" class="form-control" maxlength="10">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -55,15 +55,15 @@
 					<label>10.4 ¿Se remitió el oficio solicitando el apoyo de ambulacia y paremédicos, para el día de la aplicación al MINSA o ESSALUD, Bomberos?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VC_10_4_SINO" name="VC_10_4_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VC_10_4_SINO" name="VC_10_4_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VC_10_4_CANT" name="VC_10_4_CANT" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VC_10_4_CANT" name="VC_10_4_CANT" placeholder="¿Cuántos?" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VC_10_4_FECHA" name="VC_10_4_FECHA" placeholder="fecha de presentación de oficio: dd/mm/yyyy" class="form-control">
+					<input type="text" id="VC_10_4_FECHA" name="VC_10_4_FECHA" placeholder="fecha de presentación de oficio: dd/mm/yyyy" class="form-control" maxlength="10">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -73,15 +73,15 @@
 					<label>10.5 ¿Verificar si cuenta con la elaboración del Croquis del Local de Aplicación, en formato físico y virtual?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VC_10_5_SINO" name="VC_10_5_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VC_10_5_SINO" name="VC_10_5_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VC_10_5_CANT" name="VC_10_5_CANT" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VC_10_5_CANT" name="VC_10_5_CANT" placeholder="¿Cuántos?" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VC_10_5_OBS" name="VC_10_5_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VC_10_5_OBS" name="VC_10_5_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -107,6 +107,10 @@
 							required: true,
 							digits: true,
 							range: [1,2]
+						},
+						VC_10_1_CANT:
+						{
+							digits: true
 						},
 						VC_10_2_SINO:
 						{
@@ -134,6 +138,10 @@
 							digits: true,
 							range: [1,2]
 						},
+						VC_10_4_CANT:
+						{
+							digits: true
+						},
 						VC_10_4_FECHA:
 						{
 							peruDate: true
@@ -143,7 +151,11 @@
 							required: true,
 							digits: true,
 							range: [1,2]
-						}
+						},
+						VC_10_5_CANT:
+						{
+							digits: true
+						},
 					},
 					messages : 
 					{

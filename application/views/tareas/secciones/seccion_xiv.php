@@ -37,27 +37,27 @@
 							<div class="help-block error"></div>
 						</div>
 						<div class="col-sm-1">
-							<input type="text" id="T_Aulas" name="T_Aulas" placeholder="Total Aulas" class="form-control">
+							<input type="text" id="T_Aulas" name="T_Aulas" placeholder="Total Aulas" class="form-control" maxlength="4">
 							<div class="help-block error"></div>
 						</div>
 						<div class="col-sm-1">
-							<input type="text" id="T_Meta" name="T_Meta" placeholder="Meta" class="form-control">
+							<input type="text" id="T_Meta" name="T_Meta" placeholder="Meta" class="form-control" maxlength="4">
 							<div class="help-block error"></div>
 						</div>
 						<div class="col-sm-2">
-							<input type="text" id="T_Docentes_Ingreso" name="T_Docentes_Ingreso" placeholder="Total Docentes(Ingreso Local)" class="form-control">
+							<input type="text" id="T_Docentes_Ingreso" name="T_Docentes_Ingreso" placeholder="Total Docentes(Ingreso Local)" class="form-control" maxlength="4">
 							<div class="help-block error"></div>
 						</div>
 						<div class="col-sm-2">
-							<input type="text" id="T_Docentes_Aula" name="T_Docentes_Aula" placeholder="Total Docentes(Registro en Aula)" class="form-control">
+							<input type="text" id="T_Docentes_Aula" name="T_Docentes_Aula" placeholder="Total Docentes(Registro en Aula)" class="form-control" maxlength="4">
 							<div class="help-block error"></div>
 						</div>
 						<div class="col-sm-2">
-							<input type="text" id="T_Fichas" name="T_Fichas" placeholder="Total fichas opticas registradas" class="form-control">
+							<input type="text" id="T_Fichas" name="T_Fichas" placeholder="Total fichas opticas registradas" class="form-control" maxlength="4">
 							<div class="help-block error"></div>
 						</div>
 						<div class="col-sm-2">
-							<input type="text" id="T_Cuadernillos" name="T_Cuadernillos" placeholder="Total fichas opticas registradas" class="form-control">
+							<input type="text" id="T_Cuadernillos" name="T_Cuadernillos" placeholder="Total fichas opticas registradas" class="form-control" maxlength="4">
 							<div class="help-block error"></div>
 						</div>
 					</div>
@@ -211,113 +211,3 @@
 			});
 
 		</script>
-
-	<!-- // <script type="text/javascript"> 
-	// 	$(document).ready(function() {
-	// 		load_page_viv();
-	// 	});
-
-	// 	function load_page_viv()
-	// 	{
-	// 		dep = '<?php #echo $departament->CCDD; ?>';
-	// 		sede = '<?php #echo $headquarters->Cod_Sede; ?>';
-
-	// 		$.ajax({
-	// 			url: CI.site_url + '/verificacion_tareas/get_local',
-	// 			type: 'POST',
-	// 			data: { dep:dep, sede:sede },
-	// 			cache: false,
-	// 			dataType: 'json',
-	// 			success:function(json_data)
-	// 			{
-	// 				var code_html = '';
-	// 				$.each( json_data.detalle,
-	// 						function (i, datos)
-	// 						{
-	// 							code_html = '' +
-	// 							'<div class="panel box box-success">' +
-	// 								'<div class="box-header">' +
-	// 									'<h4 class="box-title">' +
-	// 										'<a data-toggle="collapse" data-parent="#accordion_xiv" href="#collapse_xiv' + i + '">' +
-	// 											'Local de Aplicación' + (i + 1) + ':' +
-	// 										'</a>' +
-	// 									'</h4>' +
-	// 								'</div>' +
-	// 								'<div id="collapse_xiv' + i + '" class="panel-collapse collapse">' +
-	// 									'<div class="box-body">' +
-	// 										'<form id="' + i + '" role="form">' +
-	// 											'<div class="row form-group">'+
- //                                                    '<div class="col-sm-2">'+
-	// 				                                    '<label>Local de Aplicación</label>'+
-	// 			                                    '</div><div class="col-sm-6">'+
-	// 				                                    '<label>Cobertura Docentes</label>'+
-	// 			                                    '</div><div class="col-sm-3">'+
-	// 				                                    '<label>Inventario Materiales</label>'+
-	// 			                                    '</div>'+
-	// 												'<div class="col-sm-2">'+
-	// 													'<input type="text" placeholder="Local de Aplicación" class="form-control">'+
-	// 												'<div class="help-block error"></div>'+
-	// 												'</div>'+
-	// 												'<div class="col-sm-1">'+
-	// 													'<input type="text" placeholder="Total Aulas" class="form-control">'+
-	// 												'<div class="help-block error"></div>'+
-	// 											'</div>'+
-	// 			                                    '<div class="col-sm-1">'+
-	// 				                                    '<input type="text" placeholder="Meta" class="form-control">'+
-	// 				                                    '<div class="help-block error"></div>'+
-	// 			                                    '</div>'+
-	// 			                                    '<div class="col-sm-2">'+
-	// 				                                    '<input type="text" placeholder="Total Docentes(Ingreso Local)" class="form-control">'+
-	// 				                                    '<div class="help-block error"></div>'+
-	// 			                                    '</div>'+
-	// 			                                    '<div class="col-sm-2">'+
-	// 				                                    '<input type="text" placeholder="Total Docentes(Registro en Aula)" class="form-control">'+
-	// 				                                    '<div class="help-block error"></div>'+
-	// 			                                    '</div>'+
-	// 			                                    '<div class="col-sm-2">'+
-	// 				                                    '<input type="text" placeholder="Total fichas opticas registradas" class="form-control">'+
-	// 				                                    '<div class="help-block error"></div>'+
-	// 			                                    '</div>'+
-	// 			                                    '<div class="col-sm-2">'+
-	// 				                                    '<input type="text" placeholder="Total fichas opticas registradas" class="form-control">'+
-	// 				                                    '<div class="help-block error"></div>'+
-	// 			                                    '</div>'+
-	// 		                                    '</div>'+
-	// 		                                    '<div class="row form-group">'+
-	// 			                                    '<div class="pull-right">'+
-	// 				                                    '<button class="btn btn-primary">Guardar</button>'+
-	// 			                                    '</div>'+
-	// 		                                    '</div>'+
-	// 	                                    '</form>'+
-	// 									'</div>' +
-	// 								'</div>' +
-	// 							'</div>';
-
-	// 							$('#accordion_xiv').append( code_html );
-	// 						}
-	// 					);
-	// 			}
-	// 		});
-	// 	}
-
-	// </script> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	

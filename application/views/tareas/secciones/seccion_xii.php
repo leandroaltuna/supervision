@@ -10,11 +10,11 @@
 					<label>12.1 ¿Cuántos locales de aplicación verifico durante el simulacro?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_1_C" name="VS_12_1_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_1_C" name="VS_12_1_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-5">
-					<input type="text" id="VS_12_1_OBS" name="VS_12_1_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_1_OBS" name="VS_12_1_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -24,15 +24,15 @@
 					<label>12.2 ¿Falto algún miembro de la RA al simulacro en la hora establecida?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_2_SINO" name="VS_12_2_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_2_SINO" name="VS_12_2_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_2_C" name="VS_12_2_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_2_C" name="VS_12_2_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_2_OBS" name="VS_12_2_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_2_OBS" name="VS_12_2_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -42,15 +42,15 @@
 					<label>12.3 ¿Se tuvo que reemplazar algún mienbro de la RA?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_3_SINO" name="VS_12_3_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_3_SINO" name="VS_12_3_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_3_C" name="VS_12_3_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_3_C" name="VS_12_3_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_3_OBS" name="VS_12_3_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_3_OBS" name="VS_12_3_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -60,11 +60,11 @@
 					<label>12.4 ¿Se tuvo la presencia en el simulacro del Director Departamental?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_4_SINO" name="VS_12_4_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_4_SINO" name="VS_12_4_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-5">
-					<input type="text" id="VS_12_4_OBS" name="VS_12_4_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_4_OBS" name="VS_12_4_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -74,15 +74,15 @@
 					<label>12.5 ¿El material INEI llego en forma completa?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_5_SINO" name="VS_12_5_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_5_SINO" name="VS_12_5_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_5_C" name="VS_12_5_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_5_C" name="VS_12_5_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_5_OBS" name="VS_12_5_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_5_OBS" name="VS_12_5_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -92,15 +92,15 @@
 					<label>12.6 ¿Se cumplieron todos los procedimientos establecidos desde la sede central en todos los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_6_SINO" name="VS_12_6_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_6_SINO" name="VS_12_6_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_6_C" name="VS_12_6_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_6_C" name="VS_12_6_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_6_OBS" name="VS_12_6_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_6_OBS" name="VS_12_6_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -110,15 +110,15 @@
 					<label>12.7 ¿La señalética elaborada es la correcta y suficiente para la fácil identificación y desplazamiento de los profesores a sus aulas en los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_7_SINO" name="VS_12_7_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_7_SINO" name="VS_12_7_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_7_C" name="VS_12_7_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_7_C" name="VS_12_7_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_7_OBS" name="VS_12_7_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_7_OBS" name="VS_12_7_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -128,15 +128,15 @@
 					<label>12.8 ¿Se colocó el croquis de ubicación del local de la aplicación en los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_8_SINO" name="VS_12_8_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_8_SINO" name="VS_12_8_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_8_C" name="VS_12_8_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_8_C" name="VS_12_8_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_8_OBS" name="VS_12_8_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_8_OBS" name="VS_12_8_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -146,15 +146,15 @@
 					<label>12.9 ¿Las aulas a utilizar en el local de aplicación se encuentran con el mobiliario adecuado y completo en los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_9_SINO" name="VS_12_9_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_9_SINO" name="VS_12_9_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_9_C" name="VS_12_9_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_9_C" name="VS_12_9_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_9_OBS" name="VS_12_9_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_9_OBS" name="VS_12_9_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -163,15 +163,15 @@
 					<label>12.10 ¿Las aulas a utilizar en el local de aplicación se encuentran en buenas condiciones(limpias) en los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_10_SINO" name="VS_12_10_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_10_SINO" name="VS_12_10_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_10_C" name="VS_12_10_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_10_C" name="VS_12_10_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_10_OBS" name="VS_12_10_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_10_OBS" name="VS_12_10_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -181,15 +181,15 @@
 					<label>12.11 ¿Los SSHH a utlilzar en el local de aplicación se encuentran en buenas condiciones en los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_11_SINO" name="VS_12_11_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_11_SINO" name="VS_12_11_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_11_C" name="VS_12_11_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_11_C" name="VS_12_11_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_11_OBS" name="VS_12_11_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_11_OBS" name="VS_12_11_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -199,15 +199,15 @@
 					<label>12.12 ¿Se realizó la prueba de equipos desde el mismo lugar que se realizará el dia de la aplicación en los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_12_SINO" name="VS_12_12_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_12_SINO" name="VS_12_12_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_12_C" name="VS_12_12_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_12_C" name="VS_12_12_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_12_OBS" name="VS_12_12_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_12_OBS" name="VS_12_12_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -217,15 +217,15 @@
 					<label>12.13 ¿Se tuvo la presencia de Veedores durante el simulacro en los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_13_SINO" name="VS_12_13_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_13_SINO" name="VS_12_13_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_13_C" name="VS_12_13_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_13_C" name="VS_12_13_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_13_OBS" name="VS_12_13_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_13_OBS" name="VS_12_13_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -235,15 +235,15 @@
 					<label>12.14 ¿Se realizó la reunion de evaluación con toda la RA al final del simulacro en los locales verificados?</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_14_SINO" name="VS_12_14_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="VS_12_14_SINO" name="VS_12_14_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="VS_12_14_C" name="VS_12_14_C" placeholder="¿Cuántos?" class="form-control">
+					<input type="text" id="VS_12_14_C" name="VS_12_14_C" placeholder="¿Cuántos?" class="form-control" maxlength="2">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VS_12_14_OBS" name="VS_12_14_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="VS_12_14_OBS" name="VS_12_14_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -275,11 +275,19 @@
 							digits: true,
 							range: [1,2]
 						},
+						VS_12_2_C:
+						{
+							digits: true
+						},
 						VS_12_3_SINO:
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
+						},
+						VS_12_3_C:
+						{
+							digits: true
 						},
 						VS_12_4_SINO:
 						{
@@ -293,11 +301,19 @@
 							digits: true,
 							range: [1,2]
 						},
+						VS_12_5_C:
+						{
+							digits: true
+						},
 						VS_12_6_SINO:
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
+						},
+						VS_12_6_C:
+						{
+							digits: true
 						},
 						VS_12_7_SINO:
 						{
@@ -305,11 +321,19 @@
 							digits: true,
 							range: [1,2]
 						},
+						VS_12_7_C:
+						{
+							digits: true
+						},
 						VS_12_8_SINO:
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
+						},
+						VS_12_8_C:
+						{
+							digits: true
 						},
 						VS_12_9_SINO:
 						{
@@ -317,11 +341,19 @@
 							digits: true,
 							range: [1,2]
 						},
+						VS_12_9_C:
+						{
+							digits: true
+						},
 						VS_12_10_SINO:
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
+						},
+						VS_12_10_C:
+						{
+							digits: true
 						},
 						VS_12_11_SINO:
 						{
@@ -329,11 +361,19 @@
 							digits: true,
 							range: [1,2]
 						},
+						VS_12_11_C:
+						{
+							digits: true
+						},
 						VS_12_12_SINO:
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
+						},
+						VS_12_12_C:
+						{
+							digits: true
 						},
 						VS_12_13_SINO:
 						{
@@ -341,12 +381,20 @@
 							digits: true,
 							range: [1,2]
 						},
+						VS_12_13_C:
+						{
+							digits: true
+						},
 						VS_12_14_SINO:
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
-						}
+						},
+						VS_12_14_C:
+						{
+							digits: true
+						},
 					},
 					messages : 
 					{

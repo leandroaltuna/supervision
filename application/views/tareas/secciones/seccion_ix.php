@@ -10,23 +10,23 @@
 					<label>9.1 Se logró cubrir la meta programada de postulantes? Cuántas por cargo?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_1_SINO" name="N3_9_1_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_9_1_SINO" name="N3_9_1_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_1_TOTAL" name="N3_9_1_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="N3_9_1_TOTAL" name="N3_9_1_TOTAL" placeholder="Nro Total" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_9_1_T_APLI" name="N3_9_1_T_APLI" placeholder="Total de Aplicadores" class="form-control">
+					<input type="text" id="N3_9_1_T_APLI" name="N3_9_1_T_APLI" placeholder="Total de Aplicadores" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_9_1_T_ORIE" name="N3_9_1_T_ORIE" placeholder="Total de Orientadores a capacitar" class="form-control">
+					<input type="text" id="N3_9_1_T_ORIE" name="N3_9_1_T_ORIE" placeholder="Total de Orientadores a capacitar" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="N3_9_1_OBS" name="N3_9_1_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_9_1_OBS" name="N3_9_1_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -35,23 +35,23 @@
 					<label>9.2 Todos los postulantes cumplen con el perfil solicitado?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_2_SINO" name="N3_9_2_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_9_2_SINO" name="N3_9_2_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_2_TOTAL" name="N3_9_2_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="N3_9_2_TOTAL" name="N3_9_2_TOTAL" placeholder="Nro Total" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_9_2_T_APLI" name="N3_9_2_T_APLI" placeholder="Total de Aplicadores" class="form-control">
+					<input type="text" id="N3_9_2_T_APLI" name="N3_9_2_T_APLI" placeholder="Total de Aplicadores" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_9_2_T_ORIE" name="N3_9_2_T_ORIE" placeholder="Total de Orientadores a capacitar" class="form-control">
+					<input type="text" id="N3_9_2_T_ORIE" name="N3_9_2_T_ORIE" placeholder="Total de Orientadores a capacitar" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="N3_9_2_OBS" name="N3_9_2_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_9_2_OBS" name="N3_9_2_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -60,23 +60,23 @@
 					<label>9.3 Todos los postulantes entregaron su CV físico y virtual?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_3_SINO" name="N3_9_3_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_9_3_SINO" name="N3_9_3_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_3_TOTAL" name="N3_9_3_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="N3_9_3_TOTAL" name="N3_9_3_TOTAL" placeholder="Nro Total" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_9_3_T_APLI" name="N3_9_3_T_APLI" placeholder="Total de Aplicadores" class="form-control">
+					<input type="text" id="N3_9_3_T_APLI" name="N3_9_3_T_APLI" placeholder="Total de Aplicadores" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-2">
-					<input type="text" id="N3_9_3_T_ORIE" name="N3_9_3_T_ORIE" placeholder="Total de Orientadores a capacitar" class="form-control">
+					<input type="text" id="N3_9_3_T_ORIE" name="N3_9_3_T_ORIE" placeholder="Total de Orientadores a capacitar" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-3">
-					<input type="text" id="N3_9_3_OBS" name="N3_9_3_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_9_3_OBS" name="N3_9_3_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -85,11 +85,11 @@
 					<label>9.4 Se remitió a la sede central el formato con el personal preseleccionado?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_4_SINO" name="N3_9_4_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_9_4_SINO" name="N3_9_4_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_9_4_OBS" name="N3_9_4_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_9_4_OBS" name="N3_9_4_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -98,11 +98,11 @@
 					<label>9.5 El material de capacitación fue suficiente para el nivel III?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_5_SINO" name="N3_9_5_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_9_5_SINO" name="N3_9_5_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_9_5_OBS" name="N3_9_5_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_9_5_OBS" name="N3_9_5_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -111,15 +111,15 @@
 					<label>9.6 Hubo bajas o deserción durante la capacitación? Cuántas?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_6_SINO" name="N3_9_6_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_9_6_SINO" name="N3_9_6_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_6_TOTAL" name="N3_9_6_TOTAL" placeholder="Nro Total" class="form-control">
+					<input type="text" id="N3_9_6_TOTAL" name="N3_9_6_TOTAL" placeholder="Nro Total" class="form-control" maxlength="3">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_9_6_OBS" name="N3_9_6_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_9_6_OBS" name="N3_9_6_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -128,11 +128,11 @@
 					<label>9.7 La evaluación se realizó siguiendo los procedimientos establecidos por el MINEDU?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_7_SINO" name="N3_9_7_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_9_7_SINO" name="N3_9_7_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_9_7_OBS" name="N3_9_7_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_9_7_OBS" name="N3_9_7_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -141,11 +141,11 @@
 					<label>9.8 Se envió a la sede central el formato con la relación del personal seleccionado?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="N3_9_8_SINO" name="N3_9_8_SINO" placeholder="Si(1) / No(2)" class="form-control">
+					<input type="text" id="N3_9_8_SINO" name="N3_9_8_SINO" placeholder="Si(1) / No(2)" class="form-control" maxlength="1">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="N3_9_8_OBS" name="N3_9_8_OBS" placeholder="Observaciones" class="form-control">
+					<input type="text" id="N3_9_8_OBS" name="N3_9_8_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 				</div>
 			</div>
 
@@ -171,17 +171,53 @@
 							digits: true,
 							range: [1,2]
 						},
+						N3_9_1_TOTAL:
+						{
+							digits: true
+						},
+						N3_9_1_T_APLI:
+						{
+							digits: true
+						},
+						N3_9_1_T_ORIE:
+						{
+							digits: true
+						},
 						N3_9_2_SINO: 
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
 						},
+						N3_9_2_TOTAL:
+						{
+							digits: true
+						},
+						N3_9_2_T_APLI:
+						{
+							digits: true
+						},
+						N3_9_2_T_ORIE:
+						{
+							digits: true
+						},
 						N3_9_3_SINO: 
 						{
 							required: true,
 							digits: true,
 							range: [1,2]
+						},
+						N3_9_3_TOTAL:
+						{
+							digits: true
+						},
+						N3_9_3_T_APLI:
+						{
+							digits: true
+						},
+						N3_9_3_T_ORIE:
+						{
+							digits: true
 						},
 						N3_9_4_SINO: 
 						{
@@ -200,6 +236,10 @@
 							required: true,
 							digits: true,
 							range: [1,2]
+						},
+						N3_9_6_TOTAL:
+						{
+							digits: true
 						},
 						N3_9_7_SINO: 
 						{
