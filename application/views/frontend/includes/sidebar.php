@@ -51,6 +51,11 @@
 								</li>
 							</ul>
 						</li>
+						<li>
+							<a href="<?php echo base_url('files/manual.pdf'); ?>" target="_blank">
+								<i class="fa fa-laptop"></i> <span>Manual de Usuario</span>
+							</a>
+						</li>
 						<!-- <li>
 							<a href="pages/widgets.html">
 								<i class="fa fa-th"></i> <span>Widgets</span> <small class="badge pull-right bg-green">new</small>

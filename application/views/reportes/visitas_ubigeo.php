@@ -150,6 +150,12 @@
 	<script src="<?php echo base_url('js/plugins/datatables/dataTables.bootstrap.js'); ?>" type="text/javascript"></script>
 	<script src="<?php echo base_url('js/plugins/datatables/fnReloadAjax.js'); ?>" type="text/javascript"></script>
 	<!-- <script src="<?php #echo base_url('js/plugins/datatables/dataTables.fixedColumns.js'); ?>" type="text/javascript"></script> -->
+	<style type="text/css">
+		td.highlight {
+			font-weight: bold;
+			color: blue;
+		}
+	</style>
 
 	<script type="text/javascript">
 		$(function() {
@@ -263,10 +269,24 @@
 				},
 				iDisplayLength: 25,
 				sScrollX: "100%",
+				aoColumnDefs: [
+					{ "aTargets": [6, 8, 12, 14, 16], "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+							if (sData >'0') {
+								$(nTd).css('font-weight', 'bold').css('background-color', '#FFBABA').css('color', '#D8000C');
+							} 
+							// else 
+							// { 
+							// 	$(nTd).css('background-color', '#DFF2BF').css('color', '#4F8A10').css('font-weight', 'bold'); 
+							// }
+						}
+					}
+				]
 			});
 
 			// new $.fn.dataTable.FixedColumns( table_nacional );
 		});
+
+	
 
 		function load_departament()
 		{
