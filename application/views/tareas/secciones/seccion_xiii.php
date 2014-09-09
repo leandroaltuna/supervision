@@ -461,6 +461,8 @@
 
 			$('#locales_xiii').on('change', function() {
 				
+				$('.text_success').show();
+
 				$('#frm_sec_13_a')[0].reset();
 				$('#frm_sec_13_b')[0].reset();
 
@@ -507,6 +509,7 @@
 							boton_a.removeAttr('disabled');
 							boton_b.removeAttr('disabled');
 						}
+						$('.text_success').hide();
 					}
 				});
 			});
@@ -547,6 +550,7 @@
 					},
 					submitHandler: function(form)
 					{
+						$('.text_success').show();
 						form = $('#frm_sec_13');
 						var form_data = form.serializeArray();
 						var button_form = form.find(':submit');
@@ -565,12 +569,12 @@
 							data: form_data,
 							dataType: 'json',
 							success: function(json) {
-								$('.text_success').hide();
 								alert(json.msg);
 								if (json.estado)
 								{
 									button_form.removeAttr('disabled');
 								}
+								$('.text_success').hide();
 							}
 						});
 					}
@@ -728,7 +732,7 @@
 						VA_13_18_C:
 						{
 							digits: true
-						},
+						}
 					},
 					messages : 
 					{
@@ -755,6 +759,7 @@
 					},
 					submitHandler: function(form)
 					{
+						$('.text_success').show();
 						form = $('#frm_sec_13_a');
 						var form_data = form.serializeArray();
 						var button_form = form.find(':submit');
@@ -774,12 +779,12 @@
 							data: form_data,
 							dataType: 'json',
 							success: function(json) {
-								$('.text_success').hide();
 								alert(json.msg);
 								if (json.estado)
 								{
 									button_form.removeAttr('disabled');
 								}
+								$('.text_success').hide();
 							}
 						});
 					}
@@ -870,6 +875,7 @@
 					},
 					submitHandler: function(form)
 					{
+						$('.text_success').show();
 						form = $('#frm_sec_13_b');
 						var form_data = form.serializeArray();
 						var button_form = form.find(':submit');
@@ -889,12 +895,12 @@
 							data: form_data,
 							dataType: 'json',
 							success: function(json) {
-								$('.text_success').hide();
 								alert(json.msg);
 								if (json.estado)
 								{
 									button_form.removeAttr('disabled');
 								}
+								$('.text_success').hide();
 							}
 						});
 					}

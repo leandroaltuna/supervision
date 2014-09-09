@@ -346,6 +346,7 @@
 					},
 					submitHandler: function(form)
 					{
+						$('.text_success').show();
 						form = $('#frm_sec_2');
 						var form_data = form.serializeArray();
 						var button_form = form.find(':submit');
@@ -370,6 +371,7 @@
 								{
 									button_form.removeAttr('disabled');
 								}
+								$('.text_success').hide();
 							}
 						});
 					}

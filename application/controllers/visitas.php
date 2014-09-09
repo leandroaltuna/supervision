@@ -166,7 +166,7 @@ class Visitas extends CI_Controller {
 			if ( !in_array( $field_name, $this->master_table_excluded_fields ) )
 			{
 				// $this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
-				$this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : $this->input->post($field_name);
+				$this->master_data[$field_name] = ($this->input->post($field_name) == '') ? null : strtoupper($this->input->post($field_name));
 			}
 		}
 
@@ -176,7 +176,7 @@ class Visitas extends CI_Controller {
 			if ( !in_array( $field_name, $this->locales_table_excluded_fields ) )
 			{
 				// $this->locales_data[$field_name] = ($this->input->post($field_name) == '') ? null : utf8_decode($this->input->post($field_name));
-				$this->locales_data[$field_name] = ($this->input->post($field_name) == '') ? null : $this->input->post($field_name);
+				$this->locales_data[$field_name] = ($this->input->post($field_name) == '') ? null : strtoupper($this->input->post($field_name));
 			}
 		}
 

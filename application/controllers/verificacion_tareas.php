@@ -83,7 +83,7 @@ class Verificacion_tareas extends CI_Controller {
 		$Cod_Sede = $this->input->post('sede');
 		$seccion = $this->input->post('seccion');
 
-		$list = [
+		$list = array(
 			'SECCION_1' => array( 'TABLA' => 'ACTIVIDAD', 'TIPO' => 0), 
 			'SECCION_2' => array('TABLA' => 'ACTIVIDAD', 'TIPO' => 0 ), 
 			'SECCION_3' => array('TABLA' => 'AVANCE_SEL_PERSONAL', 'TIPO' => 0 ), 
@@ -101,7 +101,7 @@ class Verificacion_tareas extends CI_Controller {
 			'SECCION_13a' => array('TABLA' => 'DIA_APLICACION', 'TIPO' => 1 ), 
 			'SECCION_13b' => array('TABLA' => 'DES_APLICACION', 'TIPO' => 1 ), 
 			'SECCION_14' => array('TABLA' => 'COB_ALCANZADA', 'TIPO' => 1 )
-			];
+			);
 		$data_list = $list['SECCION_'.$seccion];
 
 		$this->table = $data_list['TABLA'];
@@ -124,37 +124,37 @@ class Verificacion_tareas extends CI_Controller {
 		switch ($seccion)
 		{
 			case '1':
-				$this->array_excluded = ['A2_2_1_SINO', 'A2_2_1_OBS', 'A2_2_2_TOTAL', 'A2_2_2_OBS', 'A2_2_3_TOTAL', 'A2_2_3_OBS', 'A2_2_4_SINO', 'A2_2_4_OBS', 'A2_2_5_SINO', 'A2_2_5_OBS', 'A2_2_6_SINO', 'A2_2_6_OBS', 'A2_2_7_SINO', 'A2_2_7_TOTAL', 'A2_2_7_OBS', 'A2_2_8_TOTAL', 'A2_2_8_OBS', 'A2_2_9_SINO', 'A2_2_9_OBS', 'A2_2_10_TOTAL', 'A2_2_10_OBS', 'A2_2_11_SINO', 'A2_2_11_TOTAL', 'A2_2_11_OBS', 'A2_2_12_SINO', 'A2_2_12_OBS', 'A2_2_13_SINO', 'A2_2_13_OBS', 'A2_2_14_SINO', 'A2_2_14_OBS', 'A2_2_15_SINO', 'A2_2_15_OBS' ];
+				$this->array_excluded = array('A2_2_1_SINO', 'A2_2_1_OBS', 'A2_2_2_TOTAL', 'A2_2_2_OBS', 'A2_2_3_TOTAL', 'A2_2_3_OBS', 'A2_2_4_SINO', 'A2_2_4_OBS', 'A2_2_5_SINO', 'A2_2_5_OBS', 'A2_2_6_SINO', 'A2_2_6_OBS', 'A2_2_7_SINO', 'A2_2_7_TOTAL', 'A2_2_7_OBS', 'A2_2_8_TOTAL', 'A2_2_8_OBS', 'A2_2_9_SINO', 'A2_2_9_OBS', 'A2_2_10_TOTAL', 'A2_2_10_OBS', 'A2_2_11_SINO', 'A2_2_11_TOTAL', 'A2_2_11_OBS', 'A2_2_12_SINO', 'A2_2_12_OBS', 'A2_2_13_SINO', 'A2_2_13_OBS', 'A2_2_14_SINO', 'A2_2_14_OBS', 'A2_2_15_SINO', 'A2_2_15_OBS' );
 				break;
 
 			case '2':
-				$this->array_excluded = ['A1_1_1_SINO', 'A1_1_1__OBS', 'A1_1_2_SINO', 'A1_1_2_OBS', 'A1_1_3_SINO', 'A1_1_3_OBS', 'A1_1_4_SINO', 'A1_1_4_OBS', 'A1_1_5_SINO', 'A1_1_5_OBS' ];
+				$this->array_excluded = array('A1_1_1_SINO', 'A1_1_1__OBS', 'A1_1_2_SINO', 'A1_1_2_OBS', 'A1_1_3_SINO', 'A1_1_3_OBS', 'A1_1_4_SINO', 'A1_1_4_OBS', 'A1_1_5_SINO', 'A1_1_5_OBS' );
 				break;
 
 			case '4a':
 			case '13a':
 			case '13b':
 			case '14':
-				$this->array_excluded = ['Id_Local'];
+				$this->array_excluded = array('Id_Local');
 				break;
 
 			case '6':
-				$this->array_excluded = ['CCDD', 'Cod_Sede', 'N3_7_1_TOTAL', 'N3_7_1_T_APLI', 'N3_7_1_T_ORIE', 'N3_7_1_T_OBS', 'N3_7_2_TOTAL', 'N3_7_2_T_APLI', 'N3_7_2_T_ORIE', 'N3_7_2_T_OBS', 'N3_7_3_SINO', 'N3_7_3_OBS', 'N3_7_4_SINO', 'N3_7_4_OBS', 'N3_7_5_SINO', 'N3_7_5_OBS'];
+				$this->array_excluded = array('CCDD', 'Cod_Sede', 'N3_7_1_TOTAL', 'N3_7_1_T_APLI', 'N3_7_1_T_ORIE', 'N3_7_1_T_OBS', 'N3_7_2_TOTAL', 'N3_7_2_T_APLI', 'N3_7_2_T_ORIE', 'N3_7_2_T_OBS', 'N3_7_3_SINO', 'N3_7_3_OBS', 'N3_7_4_SINO', 'N3_7_4_OBS', 'N3_7_5_SINO', 'N3_7_5_OBS');
 				break;
 			case '7':
-				$this->array_excluded = ['CCDD', 'Cod_Sede', 'N2_6_1_TOTAL', 'N2_6_1_T_CORD', 'N2_6_1_T_ACL', 'N2_6_1_OBS', 'N2_6_2_TOTAL', 'N2_6_2_T_CORD', 'N2_6_2_T_ACL', 'N2_6_2_OBS', 'N2_6_3_SINO', 'N2_6_3_OBS', 'N2_6_4_SINO', 'N2_6_4_OBS', 'N2_6_5_SINO', 'N2_6_5_OBS'];
+				$this->array_excluded = array('CCDD', 'Cod_Sede', 'N2_6_1_TOTAL', 'N2_6_1_T_CORD', 'N2_6_1_T_ACL', 'N2_6_1_OBS', 'N2_6_2_TOTAL', 'N2_6_2_T_CORD', 'N2_6_2_T_ACL', 'N2_6_2_OBS', 'N2_6_3_SINO', 'N2_6_3_OBS', 'N2_6_4_SINO', 'N2_6_4_OBS', 'N2_6_5_SINO', 'N2_6_5_OBS');
 				break;
 
 			case '8':
-				$this->array_excluded = ['CCDD', 'Cod_Sede', 'N3_9_1_SINO', 'N3_9_1_TOTAL', 'N3_9_1_T_APLI', 'N3_9_1_T_ORIE', 'N3_9_1_OBS', 'N3_9_2_SINO', 'N3_9_2_TOTAL', 'N3_9_2_T_APLI', 'N3_9_2_T_ORIE', 'N3_9_2_OBS', 'N3_9_3_SINO', 'N3_9_3_TOTAL', 'N3_9_3_T_APLI', 'N3_9_3_T_ORIE', 'N3_9_3_OBS', 'N3_9_4_SINO', 'N3_9_4_OBS', 'N3_9_5_SINO', 'N3_9_5_OBS', 'N3_9_6_SINO', 'N3_9_6_TOTAL', 'N3_9_6_OBS', 'N3_9_7_SINO', 'N3_9_7_OBS', 'N3_9_8_SINO', 'N3_9_8_OBS'];
+				$this->array_excluded = array('CCDD', 'Cod_Sede', 'N3_9_1_SINO', 'N3_9_1_TOTAL', 'N3_9_1_T_APLI', 'N3_9_1_T_ORIE', 'N3_9_1_OBS', 'N3_9_2_SINO', 'N3_9_2_TOTAL', 'N3_9_2_T_APLI', 'N3_9_2_T_ORIE', 'N3_9_2_OBS', 'N3_9_3_SINO', 'N3_9_3_TOTAL', 'N3_9_3_T_APLI', 'N3_9_3_T_ORIE', 'N3_9_3_OBS', 'N3_9_4_SINO', 'N3_9_4_OBS', 'N3_9_5_SINO', 'N3_9_5_OBS', 'N3_9_6_SINO', 'N3_9_6_TOTAL', 'N3_9_6_OBS', 'N3_9_7_SINO', 'N3_9_7_OBS', 'N3_9_8_SINO', 'N3_9_8_OBS');
 				break;
 
 			case '9':
-				$this->array_excluded = ['CCDD', 'Cod_Sede', 'N2_8_1_SINO', 'N2_8_1_TOTAL', 'N2_8_1_T_CORD', 'N2_8_1_T_ACL', 'N2_8_1_OBS', 'N2_8_2_SINO', 'N2_8_2_TOTAL', 'N2_8_2_T_CORD', 'N2_8_2_T_ACL', 'N2_8_2_OBS', 'N2_8_3_SINO', 'N2_8_3_TOTAL', 'N2_8_3_T_CORD', 'N2_8_3_T_ACL', 'N2_8_3_OBS', 'N2_8_4_SINO', 'N2_8_4_OBS', 'N2_8_5_SINO', 'N2_8_5_OBS', 'N2_8_6_SINO', 'N2_8_6_TOTAL', 'N2_8_6_OBS', 'N2_8_7_SINO', 'N2_8_7_OBS', 'N2_8_8_SINO', 'N2_8_8_OBS'];
+				$this->array_excluded = array('CCDD', 'Cod_Sede', 'N2_8_1_SINO', 'N2_8_1_TOTAL', 'N2_8_1_T_CORD', 'N2_8_1_T_ACL', 'N2_8_1_OBS', 'N2_8_2_SINO', 'N2_8_2_TOTAL', 'N2_8_2_T_CORD', 'N2_8_2_T_ACL', 'N2_8_2_OBS', 'N2_8_3_SINO', 'N2_8_3_TOTAL', 'N2_8_3_T_CORD', 'N2_8_3_T_ACL', 'N2_8_3_OBS', 'N2_8_4_SINO', 'N2_8_4_OBS', 'N2_8_5_SINO', 'N2_8_5_OBS', 'N2_8_6_SINO', 'N2_8_6_TOTAL', 'N2_8_6_OBS', 'N2_8_7_SINO', 'N2_8_7_OBS', 'N2_8_8_SINO', 'N2_8_8_OBS');
 				break;
 
 			default:
-				$this->array_excluded = [];
+				$this->array_excluded = array();
 				break;
 		}
 
@@ -583,7 +583,7 @@ class Verificacion_tareas extends CI_Controller {
 		{
 			if ( !in_array( $field_name, $this->table_excluded_fields ) )
 			{
-				$this->table_data[$field_name] = ($this->input->post($field_name) == '') ? null : $this->input->post($field_name);
+				$this->table_data[$field_name] = ($this->input->post($field_name) == '') ? null : strtoupper($this->input->post($field_name));
 			}
 		}
 

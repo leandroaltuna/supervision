@@ -1,3 +1,8 @@
+	<style type="text/css">
+		input{
+			text-transform: uppercase;
+		}
+	</style>
 	<!-- Content Header (Page header) -->
 	<section class="content-header">
 		<h1>

@@ -176,6 +176,7 @@
 					},
 					submitHandler: function(form)
 					{
+						$('.text_success').show();
 						form = $('#frm_sec_6');
 						var form_data = form.serializeArray();
 						var button_form = form.find(':submit');
@@ -194,12 +195,12 @@
 							data: form_data,
 							dataType: 'json',
 							success: function(json) {
-								$('.text_success').hide();
 								alert(json.msg);
 								if (json.estado)
 								{
 									button_form.removeAttr('disabled');
 								}
+								$('.text_success').hide();
 							}
 						});
 					}

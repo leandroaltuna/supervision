@@ -89,7 +89,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VP_11_5_OBS" name="VP_11_5_OBS" placeholder="Observaciones" class="form-control" maxlength="2">
+					<input type="text" id="VP_11_5_OBS" name="VP_11_5_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -107,7 +107,7 @@
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">
-					<input type="text" id="VP_11_6_OBS" name="VP_11_6_OBS" placeholder="Observaciones" class="form-control" maxlength="2">
+					<input type="text" id="VP_11_6_OBS" name="VP_11_6_OBS" placeholder="Observaciones" class="form-control" maxlength="200">
 					<div class="help-block error"></div>
 				</div>
 			</div>
@@ -215,6 +215,7 @@
 					},
 					submitHandler: function(form)
 					{
+						$('.text_success').show();
 						form = $('#frm_sec_11');
 						var form_data = form.serializeArray();
 						var button_form = form.find(':submit');
@@ -233,12 +234,12 @@
 							data: form_data,
 							dataType: 'json',
 							success: function(json) {
-								$('.text_success').hide();
 								alert(json.msg);
 								if (json.estado)
 								{
 									button_form.removeAttr('disabled');
 								}
+								$('.text_success').hide();
 							}
 						});
 					}
