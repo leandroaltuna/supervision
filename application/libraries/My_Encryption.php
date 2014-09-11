@@ -2,7 +2,7 @@
 
 class My_Encryption {
 
-	var $skey 	= "SuPerNarutoKey2014"; // you can change it
+	var $skey 	= "SuPerNarutoKey?2014"; // you can change it
 	
 	public  function safe_b64encode($string) {
 

@@ -507,10 +507,14 @@
 				required: true
 			});
 
+			post_params['id'] = codigo;
+			post_params['CCDD'] = depa;
+			post_params['Cod_Sede'] = sede;
+
 			$.ajax({
 				url: CI.site_url + '/visitas/view',
 				type: 'POST',
-				data: { id:codigo, CCDD:depa, Cod_Sede:sede },
+				data: post_params,
 				cache: false,
 				dataType: 'json',
 				success:function(json_data)

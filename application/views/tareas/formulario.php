@@ -146,10 +146,14 @@
 			depa = '<?php echo $departament->CCDD; ?>';
 			sede = '<?php echo $headquarters->Cod_Sede; ?>';
 
+			post_params['depa'] = depa;
+			post_params['sede'] = sede;
+
 			$.ajax({
 				url: CI.site_url + '/verificacion_tareas/get_local',
 				type: 'POST',
-				data: { depa:depa, sede:sede },
+				// data: { depa:depa, sede:sede },
+				data: post_params,
 				cache: false,
 				dataType: 'json',
 				success:function(json_data)
@@ -171,10 +175,15 @@
 		function view_verificacion_tareas()
 		{
 			$('.text_success').show();
+
+			post_params['depa'] = '<?php echo $departament->CCDD; ?>';
+			post_params['sede'] = '<?php echo $headquarters->Cod_Sede; ?>';
+
 			$.ajax({
 				url: CI.site_url + '/verificacion_tareas/view',
 				type: 'POST',
-				data: {depa: '<?php echo $departament->CCDD; ?>', sede: '<?php echo $headquarters->Cod_Sede; ?>'},
+				// data: {depa: '<?php echo $departament->CCDD; ?>', sede: '<?php echo $headquarters->Cod_Sede; ?>'},
+				data: post_params,
 				dataType: 'json',
 				success: function(json_data) 
 				{

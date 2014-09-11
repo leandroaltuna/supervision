@@ -46,6 +46,7 @@
 				url: CI.site_url + '/ubigeo/user_departamento',
 				type: 'POST',
 				cache: false,
+				data: post_params,
 				dataType: 'json',
 				success:function(json_data)
 				{

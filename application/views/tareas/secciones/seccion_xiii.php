@@ -470,6 +470,10 @@
 				sede = '<?php echo $headquarters->Cod_Sede; ?>';
 				codigo = $(this).val();
 
+				post_params['depa'] = depa;
+				post_params['sede'] = sede;
+				post_params['codigo'] = codigo;
+
 				nombre_xiii = '';
 				if ( codigo != '0' )
 				{
@@ -485,7 +489,8 @@
 				$.ajax({
 					url: CI.site_url + '/verificacion_tareas/view_detalle_xiii',
 					type: 'POST',
-					data: { depa:depa, sede:sede, codigo:codigo },
+					// data: { depa:depa, sede:sede, codigo:codigo },
+					data: post_params,
 					cache: false,
 					dataType: 'json',
 					success:function(json_data)

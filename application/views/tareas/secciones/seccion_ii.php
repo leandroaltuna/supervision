@@ -36,7 +36,7 @@
 					<label>2.3 Cuántos metros cuadrados tiene el local de la sede?.</label>
 				</div>
 				<div class="col-sm-1">
-					<input type="text" id="A2_2_3_TOTAL" name="A2_2_3_TOTAL" placeholder="Nro Total" class="form-control" maxlength="2">
+					<input type="text" id="A2_2_3_TOTAL" name="A2_2_3_TOTAL" placeholder="Nro Total" class="form-control" maxlength="4">
 					<div class="help-block error"></div>
 				</div>
 				<div class="col-sm-4">

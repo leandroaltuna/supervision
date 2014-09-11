@@ -343,13 +343,18 @@
 				sede = '<?php echo $headquarters->Cod_Sede; ?>';
 				codigo = $(this).val();
 
+				post_params['depa'] = depa;
+				post_params['sede'] = sede;
+				post_params['codigo'] = codigo;
+
 				boton = $('#frm_sec_4').find(':submit');
 				boton.attr('disabled', 'disabled');
 
 				$.ajax({
 					url: CI.site_url + '/verificacion_tareas/view_detalle_iv',
 					type: 'POST',
-					data: { depa:depa, sede:sede, codigo:codigo },
+					// data: { depa:depa, sede:sede, codigo:codigo },
+					data: post_params,
 					cache: false,
 					dataType: 'json',
 					success:function(json_data)

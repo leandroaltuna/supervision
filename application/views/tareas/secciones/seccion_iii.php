@@ -6,6 +6,12 @@
 	?>
 		<!-- <form role="form"> -->
 			<div class="row form-group">
+				<div class="col-sm-10">
+					<span>(2) = Total PEA Programada, (3) = Total PEA Preseleccionada, (5) = Total PEA a Capacitar, (7) = Total PEA Seleccionada.</span>
+				</div>
+			</div>
+
+			<div class="row form-group">
 				<div class="col-sm-2">
 					<label>Coordinador de Sede.</label>
 				</div>

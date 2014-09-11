@@ -59,7 +59,7 @@ class Visitas extends CI_Controller {
 
 	function get_data( $CCDD, $Cod_Sede )
 	{
-		$query = "SELECT id, CCDD, Cod_Sede, Nombre, Direccion FROM ".$this->locales." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."' ORDER BY id ASC";
+		$query = "SELECT id, CCDD, Cod_Sede, Nombre, Direccion FROM ".$this->locales." WHERE CCDD = '".$CCDD."' AND Cod_Sede = '".$Cod_Sede."' ORDER BY id ASC;";
 		// $this->data = $this->convert_utf8->convert_result( $this->visitas_model->only_query( $query ) );
 		$this->data = $this->visitas_model->only_query( $query )->result();
 

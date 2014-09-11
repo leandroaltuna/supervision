@@ -35,6 +35,8 @@
 				'site_url': '<?php echo site_url(); ?>',
 				'year': <?php echo date("Y"); ?>
 			};
+
+			var post_params = { '<?php echo $this->security->get_csrf_token_name(); ?>' : '<?php echo $this->security->get_csrf_hash(); ?>' }
 			-->
 		</script>
 		<script type="text/javascript">
