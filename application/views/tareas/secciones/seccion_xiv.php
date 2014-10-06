@@ -77,9 +77,11 @@
 					$('.text_success').show();
 					$('#frm_sec_14')[0].reset();
 
-					depa = '<?php echo $departament->CCDD; ?>';
-					sede = '<?php echo $headquarters->Cod_Sede; ?>';
 					codigo = $(this).val();
+
+					post_params['depa'] = '<?php echo $departament->CCDD; ?>';
+					post_params['sede'] = '<?php echo $headquarters->Cod_Sede; ?>';
+					post_params['codigo'] = codigo;
 
 					nombre_xiv = '';
 					if ( codigo != '0' )
@@ -94,7 +96,7 @@
 					$.ajax({
 						url: CI.site_url + '/verificacion_tareas/view_detalle_xiv',
 						type: 'POST',
-						data: { depa:depa, sede:sede, codigo:codigo },
+						data: post_params,
 						cache: false,
 						dataType: 'json',
 						success:function(json_data)

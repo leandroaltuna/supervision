@@ -18,6 +18,7 @@ class Ubigeo extends CI_Controller {
 		}
 
 		$this->load->model('ubigeo_model');
+		$this->load->library('encrypt');
 
 		$this->user = $this->ion_auth->user()->row();
 
